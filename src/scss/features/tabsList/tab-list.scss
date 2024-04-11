@@ -1,0 +1,16 @@
+
+
+.tabs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30rem;
+   &-item{
+    
+   }
+   &-item:hover{
+     border-bottom: 2px solid;
+     cursor: pointer;
+   }
+}
+
