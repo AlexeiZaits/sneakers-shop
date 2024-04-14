@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/github.io/sneakers-shop/static/css/main.9028a2de.css",
-    "main.js": "/github.io/sneakers-shop/static/js/main.ecef2318.js",
-    "static/media/KumbhSans-Bold.ttf": "/github.io/sneakers-shop/static/media/KumbhSans-Bold.50541307c719da5b3b39.ttf",
-    "static/media/KumbhSans-Regular.ttf": "/github.io/sneakers-shop/static/media/KumbhSans-Regular.84e115ebaf5861370047.ttf",
-    "static/media/git-hub-img.png": "/github.io/sneakers-shop/static/media/git-hub-img.4b653786085948aa798e.png",
-    "static/media/logo.svg": "/github.io/sneakers-shop/static/media/logo.4fe9c1e86cf9bf600f0c239f6a6e5317.svg",
-    "index.html": "/github.io/sneakers-shop/index.html",
-    "static/media/icon-cart.svg": "/github.io/sneakers-shop/static/media/icon-cart.d65a0f26d04a253fa24219a4fa8ff00a.svg",
-    "static/media/icon-close.svg": "/github.io/sneakers-shop/static/media/icon-close.c390448669f3a8a4c4b2ada2f9938959.svg",
-    "static/media/icon-menu.svg": "/github.io/sneakers-shop/static/media/icon-menu.c6107d03f1edcf73523ebd8cbc50a443.svg",
-    "main.9028a2de.css.map": "/github.io/sneakers-shop/static/css/main.9028a2de.css.map",
-    "main.ecef2318.js.map": "/github.io/sneakers-shop/static/js/main.ecef2318.js.map"
+    "main.css": "/sneakers-shop/static/css/main.edbf4c68.css",
+    "main.js": "/sneakers-shop/static/js/main.608d7d1b.js",
+    "static/media/KumbhSans-Bold.ttf": "/sneakers-shop/static/media/KumbhSans-Bold.50541307c719da5b3b39.ttf",
+    "static/media/KumbhSans-Regular.ttf": "/sneakers-shop/static/media/KumbhSans-Regular.84e115ebaf5861370047.ttf",
+    "static/media/git-hub-img.png": "/sneakers-shop/static/media/git-hub-img.4b653786085948aa798e.png",
+    "static/media/logo.svg": "/sneakers-shop/static/media/logo.4fe9c1e86cf9bf600f0c239f6a6e5317.svg",
+    "index.html": "/sneakers-shop/index.html",
+    "static/media/icon-cart.svg": "/sneakers-shop/static/media/icon-cart.d65a0f26d04a253fa24219a4fa8ff00a.svg",
+    "static/media/icon-close.svg": "/sneakers-shop/static/media/icon-close.c390448669f3a8a4c4b2ada2f9938959.svg",
+    "static/media/icon-menu.svg": "/sneakers-shop/static/media/icon-menu.c6107d03f1edcf73523ebd8cbc50a443.svg",
+    "main.edbf4c68.css.map": "/sneakers-shop/static/css/main.edbf4c68.css.map",
+    "main.608d7d1b.js.map": "/sneakers-shop/static/js/main.608d7d1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.9028a2de.css",
-    "static/js/main.ecef2318.js"
+    "static/css/main.edbf4c68.css",
+    "static/js/main.608d7d1b.js"
   ]
 }
