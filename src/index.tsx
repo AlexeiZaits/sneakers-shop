@@ -1,7 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import "./scss/index.scss"
 import { App } from './app';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Collections, About, Men, Women, Contact } from './pages';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+    // errorElement: <ErrorPage />,
+    children: [
+      { 
+        path:  "collections",
+        element: <Collections />,
+      },
+      { 
+        path:  "about",
+        element: <About />,
+      },
+      { 
+        path:  "men",
+        element: <Men/>,
+      },
+      { 
+        path:  "women",
+        element: <Women />,
+      },
+      { 
+        path:  "contact",
+        element: <Contact/>,
+      },
+    ],
+  },
+]);
 
 
 const root = ReactDOM.createRoot(
@@ -9,7 +41,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 

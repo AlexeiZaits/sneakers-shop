@@ -1,8 +1,16 @@
 // @import "./fonts";
-// @import "./utils";
+@import "./utils";
 // @import "./pages";
 @import "./widgets";
-@import "./features/";
+@import "./features";
 // @import "./entities";
 // @import "./shared";
 
+
+.main {
+    width: 100%;
+    margin: 0 auto;
+    @media (min-width: $dekstop) {
+        width: 1440px;
+    }
+}

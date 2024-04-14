@@ -1,0 +1,25 @@
+
+
+.tabs{
+    display: none;
+    width: 30rem;
+    @media (min-width: $tablet) {
+      @include flex();
+    }
+   &-item{
+    text-decoration: none;
+    @include t-main();
+    transition: all 0.5s;
+    border-bottom: 3px solid transparent;
+   }
+   &-item:hover{
+     color: $blackText;
+     border-color: $mainBorder;
+     cursor: pointer;
+   }
+  &-active{
+    color: $blackText;
+    border-color: $mainBorder;
+  }
+}
+

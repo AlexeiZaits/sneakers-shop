@@ -1,0 +1,87 @@
+
+
+.header {
+    margin: 0 auto;
+    width: 100%;
+    @include flex();
+    position: relative;
+    text-align: center;
+    height: 6rem;
+    border-bottom: 2px solid $headerBorder;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    
+    @media (min-width: $dekstop) {
+        width: 1440px;
+        padding: 0;
+    }
+    &-box{
+        @include flex();
+        justify-content: space-around;
+        @media (min-width:$tablet) {
+            
+            justify-content: space-between;
+        }
+        width: 8rem;
+        margin-top: 1rem;
+    }
+    &-menu {
+        margin-top: 0.3rem;
+        @media (min-width: $tablet) {
+            display: none;
+        }
+    }
+    &-logo{
+            
+    }
+    &-logo{
+        cursor: pointer;
+    }
+    &-tablist{
+        margin-top: 2rem;
+        width: 11rem;
+        @media (min-width:$tablet) {
+            width: 43rem;
+        }
+        
+    }
+    &-avatar{
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-top: 0.5rem;
+        @media (min-width: $tablet) {
+            margin-top: 0;
+            width: 52px;
+            height: 52px;
+        }
+        
+        border-radius: 2rem;
+        border: 2px solid transparent;
+        transition: all 0.5s;
+
+    }
+    &-avatar:hover{
+        border-color: $mainBorder;
+        cursor: pointer;
+    }
+    &-cart{
+        margin-top: 1rem;
+    }   
+    &-cart:hover{
+        fill: black;
+    }
+    &-cart{
+        cursor: pointer;
+    }
+}
+
+.cart{
+    &-img path{
+        transition: all 0.5s;
+    }
+    &-img:hover path{
+        fill: $blackText;
+    }
+}
