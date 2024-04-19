@@ -1,22 +1,29 @@
-import { octokit } from "./octokit";
-import { Buffer } from "buffer";
+
+
+
+
+import axios from 'axios';
+
+const apiKey = process.env.SNEAKERS_APP_API_KEY;
 
 export async function apiGetCards() {
     try {
-        const response = await octokit.request(`GET /repos/AlexeiZaits/api/contents/cards/%D1%81ards.json?ref=main`, {
+        const response = await axios.get('https://api.github.com/repos/AlexeiZaits/api/contents/cards/%D1%81ards.json', {
             headers: {
-            "content-type": "text/plain",
-            "X-GitHub-Api-Version": "2022-11-28",
+                Authorization: `${apiKey}`,
+                "Accept": "application/vnd.github.v3.raw",
+                "content-type": "text/plain",
+                "X-GitHub-Api-Version": "2022-11-28",
             },
+            params: {
+                ref: 'main'
+            }
         });
-        const contentBase64 = response.data.content;
-        const content = Buffer.from(contentBase64, 'base64').toString('utf-8'); 
-
-        return (JSON.parse(content)).cards
         
+        
+        
+        return response.data.cards;
     } catch (error) {
-        return error
+        return error;
     }
-
-    
 }

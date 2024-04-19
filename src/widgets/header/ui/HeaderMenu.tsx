@@ -10,6 +10,7 @@ export function HeaderMenu(){
     const dispatch = useDispatch()
 
     function handleClick(){
+        document.documentElement.style.overflow = 'hidden';
         dispatch(toggleSidebar(null))
     }
 

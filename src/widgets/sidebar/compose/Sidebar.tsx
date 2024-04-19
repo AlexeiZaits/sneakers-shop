@@ -11,8 +11,8 @@ export function Sidebar(){
     const sidebarRef = useRef<HTMLDivElement>(null)
 
     function handleClick(){
-        
         if (window.innerWidth <= 1024){
+            document.documentElement.style.overflow = '';
             dispatch(toggleSidebar(null))
         }
     }

@@ -9,6 +9,7 @@ export function useGetCards(cards:ICard[], setCards:Dispatch<React.SetStateActio
         if (!cards.length) {
         apiGetCards()
         .then(data => {
+            console.log(data)
             setCards(data.filter((data: ICard) => data.new === true))
             
         })
