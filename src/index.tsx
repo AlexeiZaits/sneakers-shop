@@ -2,33 +2,42 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./scss/index.scss"
 import { App } from './app';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Collections, About, Men, Women, Contact } from './pages';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { Home } from './pages/Home';
+import { ErrorPage } from './pages';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App/>,
-    // errorElement: <ErrorPage />,
+    path: "sneakers-shop/",
+    element: <App><Outlet/></App>,
+    errorElement: <App><ErrorPage/></App>,
     children: [
-      { 
-        path:  "collections",
+      
+      {
+        path:  "",
+        element: <Home />,
+      },
+      {
+        path:  "collections/",
         element: <Collections />,
       },
-      { 
-        path:  "about",
+      {
+        path:  "about/",
         element: <About />,
       },
       { 
-        path:  "men",
+        path:  "men/",
         element: <Men/>,
       },
       { 
-        path:  "women",
+        path:  "women/",
         element: <Women />,
       },
       { 
-        path:  "contact",
+        path:  "contact/",
         element: <Contact/>,
       },
     ],
@@ -41,7 +50,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <Provider store={store}>
+      <RouterProvider router={router}/>
+    </Provider>
   </React.StrictMode>
 );
 
