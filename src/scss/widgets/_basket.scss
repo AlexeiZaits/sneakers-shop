@@ -5,7 +5,7 @@
     height: 15rem;
     background-color: white;
     position: absolute;
-    margin: 0 auto;
+    right: 0.5rem;
     top: 5rem;
     animation-duration: 1.5s;
     z-index: 998;
@@ -14,7 +14,7 @@
     -moz-box-shadow: 4px 33px 76px -4px rgba(149,153,156,1);
     box-shadow: 4px 33px 76px -4px rgba(149,153,156,1);
     @media (min-width: $mobile) {
-        margin: 0;
+        
         right: 1rem;
         animation-name: basketViewMobile;
     }
@@ -25,7 +25,7 @@
         animation-name: basketViewDekstop;
         right: 0;
     }
-   
+    
     &-header{
         height: 4rem;
         border-bottom: 1px solid $headerBorder;
@@ -53,6 +53,9 @@
         
         
     }
+}
+.basket:focus{
+    outline: 0px solid transparent; 
 }
 
 @keyframes basketViewDekstop {

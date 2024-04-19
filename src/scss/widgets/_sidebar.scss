@@ -4,7 +4,7 @@
     position: absolute;
     z-index: 999;
     background-color: $opcityBack;
-
+    overflow-y: hidden;
     &-content{
         position: absolute;
         width: 13rem;
@@ -13,6 +13,9 @@
         padding: 1rem;
         animation-duration: 1.5s;
         animation-name: sidebarView;
+    }
+    &-content:focus{
+        outline: 0px solid transparent; 
     }
     &-tabs{
         @include flex();

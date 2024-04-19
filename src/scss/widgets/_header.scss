@@ -2,20 +2,20 @@
 
 .header {
     margin: 0 auto;
-    width: 100%;
+    
+    width: calc(100% - 30px) ;
     @include flex();
     position: relative;
     text-align: center;
     height: 6rem;
+    
     border-bottom: 2px solid $headerBorder;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 100%;
-    margin: 0 auto;
+    
     
     @media (min-width: $dekstop) {
-        width: 1440px;
         padding: 0;
+        width: 1260px;
+        
     }
     &-box{
         @include flex();
@@ -67,6 +67,7 @@
         cursor: pointer;
     }
     &-cart{
+        position: relative;
         margin-top: 1rem;
     }   
     &-cart:hover{
@@ -74,6 +75,20 @@
     }
     &-cart{
         cursor: pointer;
+    }
+
+    &-amount{
+        @include t-main();
+        color: white;
+        background-color: $buttonBack;
+        top: -0.4rem;
+        left: 40%;
+        border-radius: $mainRadius;
+
+        position: absolute;
+        font-size: 0.7rem;
+        width: 1.2rem;
+        height: 0.85rem;
     }
 }
 
