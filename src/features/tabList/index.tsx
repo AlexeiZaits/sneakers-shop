@@ -1,1 +1,1 @@
-export {}
+export { TabList } from "./compose/tabList"
