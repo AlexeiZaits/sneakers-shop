@@ -1,26 +1,28 @@
-import { Outlet } from 'react-router-dom';
 import { Header } from '../widgets/header';
 import { Sidebar } from '../widgets/sidebar/compose/Sidebar';
-import { useState } from 'react';
+import { Basket } from '../widgets';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
+import { ReactNode } from 'react';
 
-export function App() {
 
-  const [sidebar, setSidebar] = useState(false)
+interface IApp {
+  children: ReactNode
 
-  function handleClick(){
-    if (window.innerWidth <= 1024)
-    setSidebar(prevState=> {
-      return !prevState
-    })
-  }
+}
+
+export function App({children}:IApp) {
+
+  const sidebar = useSelector((state: RootState) => state.sidebar)
+  const {basket} = useSelector((state: RootState) => state.basket)
   
   return (
-    <div className="app">
-      {sidebar? <Sidebar handleClick={handleClick}/>: null}
-      <Header handleClickSb={handleClick}/>
-      <div id="detail">
-        <Outlet />
-      </div>
+      <div className="app">
+        {sidebar ? <Sidebar />: null}
+        {basket ?  <Basket />: null}
+        <Header />
+        {children}
     </div>
+    
   );
 }
