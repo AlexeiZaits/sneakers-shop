@@ -1,7 +1,17 @@
 
+import { LeafletMap } from "@/features/leafletMap"
+import { Links } from "@/shared/index"
+import { useLocation } from "react-router-dom"
+import { ContactInfo } from "../ui/contactInfo"
 
 export function Contact(){
-    return <div className="main">
-        Contact
+    const location = useLocation()
+    
+    return <div className="main">   
+        <Links pathname={location.pathname}/>
+        <div className="contact">
+            <LeafletMap/>
+            <ContactInfo/>
+        </div>
     </div>
 }
