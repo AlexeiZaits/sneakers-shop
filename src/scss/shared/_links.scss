@@ -1,0 +1,15 @@
+.links{
+    @include t-bold();
+    font-size: 1.15rem !important;
+    &-active{
+        color: $textActive;
+        &::after{
+            color: $blackText;
+            content: ">";
+        }
+    }
+
+    &-unactive{
+        
+    }
+}
