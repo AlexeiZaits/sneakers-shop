@@ -5,7 +5,6 @@ export const basketSlice = createSlice({
     name: "@basket",
     initialState: {
         basket: false,
-        cards: [],
         amount: 0,
     },
     reducers: {
@@ -13,7 +12,16 @@ export const basketSlice = createSlice({
             state.basket = action.payload
             
         },
+        setAmount: (state, action) => {
+            state.amount = state.amount  + action.payload
+        },
+        decreaseAmount: (state, action) => {
+            state.amount = state.amount - action.payload
+        },
+        resetAmount: (state, _) => {
+            state.amount = 0;
+        }
     }
 })
 
-export const { toggleBasket } = basketSlice.actions
+export const { toggleBasket, setAmount, decreaseAmount, resetAmount } = basketSlice.actions
