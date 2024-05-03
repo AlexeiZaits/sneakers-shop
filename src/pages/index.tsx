@@ -1,6 +1,7 @@
-export { About } from "./About"
 export { Collections } from "./Collections"
 export { Contact } from "./Contact"
 export { Men } from "./Men"
 export { Women } from "./Women"
 export { ErrorPage} from "./ErrorPage"
+export { CollectionItem } from "./CollectionItem"
+export { CheckoutOrder } from "./CheckoutOrder"
