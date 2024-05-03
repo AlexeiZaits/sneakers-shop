@@ -1,0 +1,133 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    &-current{
+        width: 100%;
+        height: 15rem;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid $mainBorder;
+        border-radius: 1rem;
+        @media (min-width: 540px) {
+            width: 30rem;
+            height: 30rem;
+            margin: 0 auto;
+        }
+        &_img{
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 1s;
+            @media (min-width: 540px) {
+                width: 30rem;
+            }
+            border-radius: 1rem;
+        }
+        &_animation{
+            opacity: 1;
+        }
+    }
+    &-list{
+        width: 30rem;
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        @media (min-width: 540px) {
+            margin: 0 auto;
+            margin-top: 1rem;
+            display: flex;
+        }
+    }
+    &-item{
+        width: 6rem;
+        height: 6rem;
+        border: 3px solid $LightBoxBorder;
+        border-radius: 1rem;
+        position: relative;
+        cursor: pointer;
+        z-index: 1;
+        &:hover{
+            &::before{
+                display: block;
+            }
+        }
+        &::before{
+            display: none;
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+            z-index: 3;
+            position: absolute;
+            background-color: $opacityLightBox;
+        }
+        &_img{
+            z-index: 1;
+            width: 3rem;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+        }
+    }
+    &-light{
+        border-color: $mainBorder;
+        &::before{
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+            z-index: 3;
+            position: absolute;
+            background-color: $opacityLightBox;
+        }
+    }
+    &-slider{
+        display: block;
+        @media (min-width: 540px) {
+            display: none; 
+        }   
+        
+        &_prev{
+            background-color: $primaryBack;
+            width: 2rem;
+            height: 2.2rem;
+            border-radius: $mainRadius;
+            padding-top: -1rem;
+            padding-left: 0.5rem;
+            align-items: center;
+            position: absolute;
+            border: 3px solid $mainBorder;
+            left: -0.8rem;
+            top: 45%;
+            z-index: 5;
+            transform: rotate(180deg);
+        }
+        &_next{
+            background-color: $primaryBack;
+            width: 2rem;
+            height: 2.2rem;
+            border-radius: $mainRadius;
+            padding-top: -1rem;
+            padding-left: 0.5rem;
+            align-items: center;
+            position: absolute;
+            border: 3px solid $mainBorder;
+            right: -0.8rem;
+            top: 45%;
+            z-index: 5;
+            
+        }
+    }
+
+}

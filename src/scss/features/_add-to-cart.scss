@@ -1,0 +1,71 @@
+.add-to-cart{
+    width: 100%;
+    height: 8rem;
+    @include flex();
+    flex-direction: column;
+    font-size: 1rem;
+    @media (min-width: 540px) {
+        height: 4rem;
+        flex-direction: row;
+    }
+}
+
+.calc{
+    @include flex();
+    align-items: center;
+    padding: 0 1rem;
+    background-color: $calcBack;
+    width: 100%;
+    height: 4rem;
+    border-radius: $mainRadius;
+    @media (min-width: 540px) {
+       
+        max-width: 11rem;
+    }
+    &-icon{
+        cursor: pointer;
+    }
+    
+}
+.add-button{
+    @include flex();
+    justify-content: space-around;
+    width: 100%;
+    height: 4rem;
+    position: relative;
+    align-items: center;    
+    padding: 0 4rem;
+    background-color: $buttonBack;
+    border-radius: $mainRadius;
+    margin-top: 1rem;
+    z-index: 0;
+    color: white;
+    cursor: pointer;
+    @media (min-width: 540px) {
+        margin-top: 0rem;
+        margin-left: 1rem;
+        padding: 0 5rem;
+        max-width: 18.5rem;
+    }
+    &_text{
+        width: 6rem;
+        margin-left: 1rem;
+    }
+    &:hover{
+        &::before{
+            opacity: 0.5;
+        }
+    }
+    &::before{
+        transition: all 0.5s;
+        content: "";
+        z-index: 1;
+        left: 0;
+        border-radius: $mainRadius;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: $primaryBack;
+    }
+}

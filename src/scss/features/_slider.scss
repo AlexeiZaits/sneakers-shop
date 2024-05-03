@@ -24,7 +24,8 @@
         opacity: 0.3;
         transition: transform 0.5s ease;
         animation-duration: 1.5s;
-        animation-name: sliderView;
+        animation-name: imgView;
+        @include imgView();
         @media (min-width: $tablet) {
             flex-direction: row;
             height: 45rem;
@@ -98,6 +99,9 @@
     }
     &-title{
         display: block;
+        position: absolute;
+        z-index: 2;
+        top: 10rem;
         width: 100%;
         @include t-bold();
         text-align: center;
@@ -106,11 +110,3 @@
 
 }
 
-@keyframes sliderView {
-    from {
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
