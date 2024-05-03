@@ -1,0 +1,1 @@
+export const contactList = { number: "+79082760949", telegram: "https://t.me/zaykuh", vk: "https://vk.com/alekseyzayats", geoLoc: "https://2gis.ru/perm/firm/2252328094666424/56.213376%2C58.007796?m=56.215728%2C58.007057%2F17.29"}
