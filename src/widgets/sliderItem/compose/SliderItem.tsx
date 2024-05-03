@@ -1,4 +1,6 @@
-import { ICard } from "@/features/slider/lib/interfaces"
+import { ICard } from "@/features/cardList/lib/interfaces";
+import { Link } from "react-router-dom";
+
 
 interface ISliderItem{
     index: number;
@@ -7,7 +9,7 @@ interface ISliderItem{
 }
 
 export function SliderItem({index, item, currentCard}: ISliderItem){
-    return <div className={`slider-item 
+    return <Link to={`collections/${item.id}`} className={`slider-item 
                     ${index === currentCard ? "slider-item_active": ""}
                     ${index > currentCard? "slider-item_prev": ""}
                     ${index < currentCard? "slider-item_next": ""}`
@@ -19,5 +21,5 @@ export function SliderItem({index, item, currentCard}: ISliderItem){
                         <span className="slider-item_price">${item.price}</span>
                     </div>
                     
-    </div>
+    </Link>
 }
