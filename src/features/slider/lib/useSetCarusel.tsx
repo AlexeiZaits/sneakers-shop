@@ -1,5 +1,5 @@
 import { Dispatch, useEffect } from "react";
-import { ICard } from "./interfaces";
+import { ICard } from "../../cardList/lib/interfaces";
 
 export function useSetCarusel(cards: ICard[], carusel:boolean, setCarusel:Dispatch<React.SetStateAction<boolean>>, handleClickRigth: ()=> void){
     useEffect(()=> {
@@ -7,7 +7,7 @@ export function useSetCarusel(cards: ICard[], carusel:boolean, setCarusel:Dispat
             setCarusel(true)
             
         }
-    }, [carusel])
+    }, [carusel, setCarusel])
 
     useEffect(() => {
         if (carusel && cards.length) {
@@ -15,5 +15,5 @@ export function useSetCarusel(cards: ICard[], carusel:boolean, setCarusel:Dispat
             return () => clearInterval(intervalId);
         }
         
-    }, [carusel, cards]);
+    }, [carusel, cards, handleClickRigth]);
 }
