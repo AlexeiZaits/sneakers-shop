@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { ICard } from "../lib/interfaces";
 import { compareNew, comparePriceHigh, comparePriceLow } from "../lib/compare";
 import { IFilterCards } from "@/features/filterCards/lib/interface";
+import { removeDuplicateById } from "../lib/removeDuplicateById";
+import { mergeList } from "../lib/mergeList";
 
 
 interface ICardListSlice {
@@ -89,12 +91,15 @@ interface IFilterCardsList {
     [key: string] : ICard[]
 }
 
+// filterObj сами переключатели фильтров имеют вид пример {price: ["51-100.99", "201-250"], color: ["red"], brand: []}
 export function filterCardsList(filterObj:IFilterCards, cardList: ICard[]){
     const initialState: IFilterCardsList = {
         price: [],
         colors: [],
         brand: [],
     }
+
+    // фильтрация по ||
     for (const key in filterObj){
         for (const item of filterObj[key]){
             if (initialState[key].length) initialState[key] = [...initialState[key] ,...visibleCardList(cardList, key, item)]
@@ -105,26 +110,11 @@ export function filterCardsList(filterObj:IFilterCards, cardList: ICard[]){
     }
     
     const {price, colors, brand} = initialState
+
+    //убераю дубликаты у colors так как у одной карточки может быть несколько цветов
     const newListColors:ICard[] = removeDuplicateById(colors)
-    function removeDuplicateById(list:ICard[]): ICard[]{
-        if (list.length !== 0){
-            const newList:ICard[] = []
-            for (const itemColor of list){
-                let check = true;
-                for (const item of newList){
-                    if(item.id === itemColor.id){
-                        check = false
-                        break
-                    }
-                }
-                if (check) newList.push(itemColor)
-                
-            }
-            return newList
-        }
-        else return []
-    }
     
+    //убираю списки которые равны 0 и сортирую по длине, чтобы первый элемент по длине был самым маленьким
     let newlist = [price, newListColors, brand]
     .filter((item) => item.length > 0)
     .sort((a, b) => {
@@ -138,25 +128,10 @@ export function filterCardsList(filterObj:IFilterCards, cardList: ICard[]){
     })
     
     if (newlist.length >= 1){
-        const newMergeList = mergeList(newlist[0], newlist.slice(1,newlist.length))
-        return newMergeList
+        // делаю слияние списков по самому маленькому 
+        return mergeList(newlist[0], newlist.slice(1,newlist.length))
     }
     else {
         return cardList
-    }
-
-
-    function mergeList(mergeList:ICard[], otherElements: ICard[][]){
-        return mergeList.filter((item) => {
-            let somethingDone = true;
-            for (let element of otherElements){
-                if(!element.some((elementItem) => elementItem.id === item.id)){
-                    somethingDone = false
-                }
-            }
-            return somethingDone
-        })
-        
-
     }
 }   
