@@ -14,7 +14,7 @@ export function HeaderBasket(){
     }
 
     return <div className='header-box'>
-    <div onClick={handleClick} className="header-cart"><CartImg fill={basket}/>{amount ? <div className="header-amount">0</div> : null}</div>
+    <div onClick={handleClick} className="header-cart"><CartImg fill={basket}/>{amount ? <div className="header-amount">{amount}</div> : null}</div>
     <a href="https://github.com/AlexeiZaits" target="blank"><img className="header-avatar" src={avatar} alt="avatar" /></a> 
     </div>
 }
