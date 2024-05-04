@@ -1,12 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { tabs } from "../lib/tabs";
-
-
-interface ITabList{
-    className?: string,
-    handleClick?: ()=> void,
-
-}
+import { ITabList } from "../lib/interfaces";
 
 export function TabList({className, handleClick}:ITabList){
     const location = useLocation()

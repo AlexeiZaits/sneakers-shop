@@ -1,1 +1,1 @@
-export {LightBox} from "./compose/LightBox"
+export {LightBox} from "../../widgets/lightBox/compose/LightBox"

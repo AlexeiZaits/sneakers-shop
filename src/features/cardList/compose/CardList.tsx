@@ -19,9 +19,7 @@ export function CardList({filter}: ICardList){
     const filterCardList = filterCardsList(filterObj, cardList)
     const sortedCardList = sortingCardList(filterCardList, sort)
     const finalyCardList = visibleCardList(sortedCardList, filter)
-    
-    
-    
+
     useGetCards(cardList, dispatch)
 
     return <div className="card-list">
@@ -34,10 +32,7 @@ export function CardList({filter}: ICardList){
         price={item.price} 
         image={item.image}
         isNew={item.isNew}
-        
         />)
         : null}
-        
-        
     </div>
 }

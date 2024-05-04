@@ -1,12 +1,10 @@
 import { ReactComponent as Minus } from "@/images/icon-minus.svg"
 import { ReactComponent as Plus } from "@/images/icon-plus.svg"
 import { useDispatch, useSelector } from "react-redux"
-import { setAmount } from "../model/calc-amount-lsice"
+import { setAmount } from "../model/calc-amount-slice"
 import { RootState } from "@/store.ts"
 
-
 export function CalcAmount(){
-
     const dispatch = useDispatch()
     const {amount} = useSelector((state: RootState) =>  state.calcAmount)
     

@@ -10,6 +10,4 @@ export function mergeList(mergeList:ICard[], otherElements: ICard[][]){
         }
         return somethingDone
     })
-    
-
 }

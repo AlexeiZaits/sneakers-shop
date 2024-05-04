@@ -1,10 +1,9 @@
-import { addCart } from "@/features/cartList/model/cart-list-slice"
+import { addCart } from "@/features/basketList/model/cart-list-slice"
 import {  CartImg } from "@/images/icon-cart"
 import { RootState } from "@/store.ts"
 import { setAmount } from "@/widgets/basket/model/basket-slice"
 import { useDispatch, useSelector } from "react-redux"
 import { getDiscountPrice } from "../lib/getDiscountPrice"
-
 
 export function AddButton(){
     const {data}  = useSelector((state: RootState) => state.collectionItem)

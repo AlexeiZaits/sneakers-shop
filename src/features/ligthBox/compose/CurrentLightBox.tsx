@@ -3,8 +3,6 @@ import { useSelector } from "react-redux"
 import { linkImg } from "../lib/link"
 import { ILightBox } from "../lib/inteface"
 
-
-
 export function CurrentLightBox({currentImg} :Pick<ILightBox, "currentImg">){
     const {data, imgs} = useSelector((state: RootState) => state.collectionItem)
     

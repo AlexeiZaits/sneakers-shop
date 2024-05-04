@@ -13,3 +13,6 @@ export interface ICard {
     
 }
 
+export interface initialStateFilter{
+    [key: string]: ICard[]
+}

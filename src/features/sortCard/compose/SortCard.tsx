@@ -22,7 +22,6 @@ export function SortCard(){
     }, [toggle])
 
     function handleBlur(){
-        
         setTimeout(() => {
             if(toggle){
                 setToggle(false)
