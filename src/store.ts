@@ -3,12 +3,10 @@ import { basketSlice } from "./widgets/basket/model/basket-slice"
 import { sidebarSlice } from "./widgets/sidebar/model/sidebar-slice"
 import { CardListSlice } from "./features/cardList/model/card-list-slice"
 import { collectionItem } from "./pages/CollectionItem/model/collection-item-slice"
-import { calcAmountSlice } from "./features/addToCart/model/calc-amount-lsice"
-import { cartListSlice } from "./features/cartList/model/cart-list-slice"
-import { filterCardsSlice } from "./features/filterCards/model/filter-cards-slice"
-
-
-
+import { calcAmountSlice } from "./features/addToCart/model/calc-amount-slice"
+import { cartListSlice } from "./features/basketList/model/cart-list-slice"
+import { filterCardsSlice } from "./widgets/filter/model/filter-cards-slice"
+import { filterControlSlice } from "./features/filterControlers/model/filter-controls-slice"
 
 export const store = configureStore({
     reducer: {
@@ -19,7 +17,7 @@ export const store = configureStore({
         calcAmount: calcAmountSlice.reducer,
         cartList: cartListSlice.reducer,
         filterCardsList: filterCardsSlice.reducer,
-        
+        filterControl: filterControlSlice.reducer,
     },
     devTools: true,
 })
