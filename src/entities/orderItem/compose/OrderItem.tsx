@@ -1,4 +1,5 @@
-import { ICartCard, removeCart } from "@/features/cartList/model/cart-list-slice";
+import { ICartCard } from "@/features/basketList/lib/interfaces";
+import { removeCart } from "@/features/basketList/model/cart-list-slice";
 import { IconDelete } from "@/images/icon-delete";
 import { decreaseAmount } from "@/widgets/basket/model/basket-slice";
 import { useDispatch } from "react-redux";
@@ -6,7 +7,6 @@ import { useDispatch } from "react-redux";
 export function OrderItem({id, image, name, amount, finalyPrice,discount, price}:Pick<ICartCard, "id" | "image" | "name" | "amount" | "finalyPrice"|"price"| "discount">){
 
     const dispatch = useDispatch();
-
 
     function handleClick(){
         dispatch(decreaseAmount(amount))
@@ -28,7 +28,7 @@ export function OrderItem({id, image, name, amount, finalyPrice,discount, price}
                 <span className="order-name ">Amount</span>
                 <span className="order-value order-amount">{amount}</span>
             </div> 
-            <div className="order-flex ">
+            <div className="order-flex">
                 <span className="order-name">Price</span>
                 <span className="order-value">${finalyPrice}{discount? <span className="order-through">${price*amount}</span>: null}</span>
             </div>
