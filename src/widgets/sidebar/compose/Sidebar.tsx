@@ -3,16 +3,16 @@ import { TabList } from "@/features/index";
 import {ReactComponent as CloseImg} from "@/images/icon-close.svg"
 import { toggleSidebar } from "../model/sidebar-slice";
 import { useDispatch } from "react-redux";
+import { clearFilters } from "@/widgets/filter/model/filter-cards-slice";
 
 export function Sidebar(){
-
     const dispatch = useDispatch()
-
     const sidebarRef = useRef<HTMLDivElement>(null)
 
     function handleClick(){
         if (window.innerWidth <= 1024){
             document.documentElement.style.overflow = '';
+            dispatch(clearFilters(null))
             dispatch(toggleSidebar(null))
         }
     }

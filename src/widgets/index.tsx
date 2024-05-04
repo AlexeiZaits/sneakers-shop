@@ -1,3 +1,3 @@
 export { Basket } from "./basket"
 export { Header } from "./header"
-export { SliderItem } from "./sliderItem"
+export { SliderItem } from "../entities/sliderItem"
