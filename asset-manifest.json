@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sneakers-shop/static/css/main.1a5e54e2.css",
-    "main.js": "/sneakers-shop/static/js/main.c8a7b7d8.js",
+    "main.css": "/sneakers-shop/static/css/main.bb17b6f4.css",
+    "main.js": "/sneakers-shop/static/js/main.afe6d3bb.js",
     "static/media/forWomen.jpg": "/sneakers-shop/static/media/forWomen.1402f182d3c51edf1800.jpg",
     "static/media/forMen.jpg": "/sneakers-shop/static/media/forMen.7ca4293ae77e690f4f16.jpg",
     "static/media/KumbhSans-Bold.ttf": "/sneakers-shop/static/media/KumbhSans-Bold.50541307c719da5b3b39.ttf",
@@ -14,11 +14,11 @@
     "static/media/icon-close.svg": "/sneakers-shop/static/media/icon-close.c390448669f3a8a4c4b2ada2f9938959.svg",
     "static/media/icon-next.svg": "/sneakers-shop/static/media/icon-next.273c4725dc18df24ec938a50eb2e515e.svg",
     "static/media/icon-menu.svg": "/sneakers-shop/static/media/icon-menu.c6107d03f1edcf73523ebd8cbc50a443.svg",
-    "main.1a5e54e2.css.map": "/sneakers-shop/static/css/main.1a5e54e2.css.map",
-    "main.c8a7b7d8.js.map": "/sneakers-shop/static/js/main.c8a7b7d8.js.map"
+    "main.bb17b6f4.css.map": "/sneakers-shop/static/css/main.bb17b6f4.css.map",
+    "main.afe6d3bb.js.map": "/sneakers-shop/static/js/main.afe6d3bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a5e54e2.css",
-    "static/js/main.c8a7b7d8.js"
+    "static/css/main.bb17b6f4.css",
+    "static/js/main.afe6d3bb.js"
   ]
 }
