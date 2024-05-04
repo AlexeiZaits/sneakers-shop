@@ -15,10 +15,8 @@ export async function apiGetCards() {
                 ref: 'main'
             }
         });
-        
-        
-        
         return response.data.cards;
+
     } catch (error) {
         return error;
     }

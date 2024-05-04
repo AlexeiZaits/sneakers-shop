@@ -7,7 +7,6 @@ import { ICard } from "@/features/cardList/lib/interfaces";
 import { apiGetCard } from "./api/apiGetCard";
 import { apiGetCards } from "./api/apiGetCards";
 
-
 export const router = createBrowserRouter([
     { 
       path: "sneakers-shop/",
@@ -57,10 +56,12 @@ export const router = createBrowserRouter([
       ],
     },
   ]);
+
 export async function cardsLoader() {
     const cards:ICard[] = await apiGetCards();
     return { cards };
 }
+
 export async function cardLoader({params}:any) {
     const card:{data: ICard, imgs: string[]} = await apiGetCard(params.collectionId);
     if (card.data === undefined) {
