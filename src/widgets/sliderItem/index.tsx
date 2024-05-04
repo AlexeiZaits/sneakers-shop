@@ -1,1 +1,0 @@
-export { SliderItem } from "./compose/SliderItem"
