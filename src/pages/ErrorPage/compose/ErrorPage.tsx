@@ -1,8 +1,4 @@
-
-
-
 export function ErrorPage(){
-    
     
     return <div className="main">
         <div className="error-page">

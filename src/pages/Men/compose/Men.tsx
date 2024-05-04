@@ -1,7 +1,7 @@
-import { CardList, FilterCards, SortCard } from "@/features/index"
+import { CardList, SortCard } from "@/features/index"
 import { Links } from "@/shared/index"
+import { Filter } from "@/widgets/filter"
 import { useLocation } from "react-router-dom"
-
 
 export function Men(){
     const location = useLocation()
@@ -9,7 +9,7 @@ export function Men(){
     return <div className="main">
         <Links pathname={location.pathname}/>
         <div className="main-container">
-            <FilterCards/>
+            <Filter/>
             <SortCard/>
         </div>
         <CardList filter="man"/>

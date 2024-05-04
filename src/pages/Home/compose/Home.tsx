@@ -1,5 +1,4 @@
-
-import { Slider } from "@/features/slider";
+import { Slider } from "@/widgets/slider";
 import forMen from "@/images/forMen.jpg";
 import forWomen from "@/images/forWomen.jpg";
 import { Link } from "react-router-dom";

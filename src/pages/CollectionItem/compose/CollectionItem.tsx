@@ -7,8 +7,7 @@ import { useEffect } from "react"
 import { RootState } from "@/store.ts"
 import { CollectionItemInfo } from "../ui/CollectionItemInfo"
 import { Links } from "@/shared/index"
-import { resetAmount } from "@/features/addToCart/model/calc-amount-lsice"
-
+import { resetAmount } from "@/features/addToCart/model/calc-amount-slice"
 
 
 export function CollectionItem(){
