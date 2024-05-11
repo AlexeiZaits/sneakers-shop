@@ -9,8 +9,6 @@ export function CurrentLightBox({currentImg} :Pick<ILightBox, "currentImg"> ){
     const location = useLocation()
     const modal = location.pathname.split("/").slice(-1)[0]
     
-    // TODO: общий список для распечатывания
-    // TODO: добавление перехода на modal
     return (
         <div className="box-current">
             {imgs.map((item, index) => (

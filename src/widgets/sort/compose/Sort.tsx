@@ -26,7 +26,7 @@ export function Sort(){
     useEffect(()=> {
         dispatch(setSort(choice))
     }, [choice, dispatch])
-
+    //TODO1: переместить model в feat
     return <div className="sort">
         <span onClick={() => dispatch(toggleState(!sortView))} className="sort-chosen">Sort by: {choice}</span>
         {sortView ? <div ref={choiceRef} onBlur={()=>handleBlur(sortView, toggleState, dispatch)} tabIndex={0} className="sort-choice">

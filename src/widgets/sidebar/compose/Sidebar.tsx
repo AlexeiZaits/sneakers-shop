@@ -24,7 +24,7 @@ export function Sidebar(){
     }
 
     useFocusEffect(sidebarRef)
-    
+     //TODO: переместить model в feat
     return <div ref={sidebarRef} onClick={handleClickOutside} className="sidebar">
         <div className="sidebar-content">
             <div onClick={handleClick}><CloseImg/></div>
