@@ -17,7 +17,6 @@ export const filterCardsSlice = createSlice({
         clearFilters: (state, _) => {
             return state = createInitialState()
         },
-        
     }
 })
 
