@@ -1,1 +1,1 @@
-export { Links } from "./links/links"
+export { Links } from "./ui/links"

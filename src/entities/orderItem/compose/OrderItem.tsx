@@ -21,13 +21,13 @@ export function OrderItem({id, image, name, amount, finalyPrice,discount, price}
             <div className="order-flex order-special">
                     <span className="order-name">Name</span>
                     <span className="order-value">{name}</span>
-            </div> 
+            </div>
         </div>
         <div className="order-container">
             <div className="order-flex order-flex_amount">
                 <span className="order-name ">Amount</span>
                 <span className="order-value order-amount">{amount}</span>
-            </div> 
+            </div>
             <div className="order-flex">
                 <span className="order-name">Price</span>
                 <span className="order-value">${finalyPrice}{discount? <span className="order-through">${price*amount}</span>: null}</span>

@@ -7,6 +7,7 @@ import { calcAmountSlice } from "./features/addToCart/model/calc-amount-slice"
 import { cartListSlice } from "./features/basketList/model/cart-list-slice"
 import { filterCardsSlice } from "./widgets/filter/model/filter-cards-slice"
 import { filterControlSlice } from "./features/filterControlers/model/filter-controls-slice"
+import { sortSlice } from "./widgets/sort/model/sort-slice"
 
 export const store = configureStore({
     reducer: {
@@ -18,9 +19,12 @@ export const store = configureStore({
         cartList: cartListSlice.reducer,
         filterCardsList: filterCardsSlice.reducer,
         filterControl: filterControlSlice.reducer,
+        sortToggle: sortSlice.reducer,
+        
     },
     devTools: true,
 })
 
 export type RootState = ReturnType<typeof store.getState>
+// TODO: исправить везде dispatch
 export type AppDispatch = typeof store.dispatch

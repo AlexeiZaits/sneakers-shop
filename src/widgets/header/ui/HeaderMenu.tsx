@@ -12,7 +12,7 @@ export function HeaderMenu(){
         document.documentElement.style.overflow = 'hidden';
         dispatch(toggleSidebar(null))
     }
-
+    
     return <div className='header-box header-tablist'>
         <div onClick={handleClick} className="header-menu"><MenuImg/></div>
         <Link to={"/sneakers-shop"}><div className="header-logo"><LogoImg/></div></Link>

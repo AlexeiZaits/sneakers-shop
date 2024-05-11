@@ -1,0 +1,10 @@
+.slider-controler{
+    &_left{
+        @include icon-next();
+        transform: scaleX(-1);
+    }
+    &_right{
+        @include icon-next();
+        right: 0;
+    }
+}

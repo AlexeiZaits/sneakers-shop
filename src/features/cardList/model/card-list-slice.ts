@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ICard, initialStateFilter } from "../lib/interfaces";
 import { compareNew, comparePriceHigh, comparePriceLow } from "../lib/compare";
 import { IFilterCards } from "@/widgets/filter/lib/interface";
@@ -13,18 +13,18 @@ interface ICardListSlice {
 
 export const initialState: ICardListSlice = {
     cardList: [],
-    sort: "Recomended",
-    
+    sort: "Recomended", 
 }
+
 
 export const CardListSlice = createSlice({
     name: "@cardList",
     initialState,
     reducers: {
-        setCardList: (state, action) => {
+        setCardList: (state, action: PayloadAction<ICard[]>) => {
             state.cardList = action.payload
         },
-        setSort: (state, action) => {
+        setSort: (state, action: PayloadAction<string>) => {
             state.sort = action.payload
         }
     }
@@ -36,32 +36,28 @@ export function visibleCardList(cardList: ICard[],  filter: string|undefined, va
     switch (filter) {
         case "new":
             return cardList.filter((data: ICard) => data.isNew === true)
-        case "man":
+        case "men":
             return cardList.filter((data: ICard)=> data.sex === "man")
-        case "woman":
+        case "women":
             return cardList.filter((data: ICard)=> data.sex === "woman")
         case "price":
-            if (valueFilter){
+            if (!valueFilter) return cardList
             const lowPrice = +valueFilter.split("-")[0]
             const highPrice = +valueFilter.split("-")[1]
             return cardList.filter((data: ICard) => {
                 return lowPrice < data.price && data.price < highPrice
                 
-            })}
-            else return cardList
+            })
         case "colors":
-            if (valueFilter)
+            if (!valueFilter) return cardList
             return cardList.filter((data: ICard) => {
                 return data.color.includes(valueFilter)
             })
-            else return cardList
-            
         case "brand":
-            if (valueFilter){
+            if (!valueFilter) return cardList 
             return cardList.filter((data: ICard) => {
                 return data.brand === valueFilter
-            })}
-            else return cardList 
+            })
             
         default:
             return cardList

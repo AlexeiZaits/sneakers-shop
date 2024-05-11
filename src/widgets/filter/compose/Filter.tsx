@@ -7,28 +7,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store.ts";
 import { toggleFilter } from "@/features/filterControlers/model/filter-controls-slice";
 import { OpenFilter } from "@/features/filterControlers/compose/openFilter";
-import { useFocusEffect } from "@/shared/lib/useFocusEffect";
+import { useFocusEffect } from "@/shared/hooks/useFocusEffect";
 
 export function Filter(){
-    const filter = useSelector((state: RootState) => state.filterControl)
-    const filterRef = useRef<HTMLDivElement>(null)
     const dispatch = useDispatch()
+    const filterView = useSelector((state: RootState) => state.filterControl)
+    const filterRef = useRef<HTMLDivElement>(null)
     
-    useFocusEffect(filter, filterRef)
+    useFocusEffect(filterRef)
     
-    function handleBlur(){
-        setTimeout(()=> {
-            if(filter) {
-                dispatch(toggleFilter(false))
-            }
-        }, 200)
-    }
-    
-    return <div className="filter">
+    return <div className="filter" onMouseLeave={() => dispatch(toggleFilter(false))}>
         <OpenFilter/>
-        {filter ? <div onBlur={handleBlur} tabIndex={0} ref={filterRef} className="filter-list">
+        {filterView ? <div  className="filter-list">
             {keysFilter.map((key)=>{
-                return <FilterBlock keyFilter={key}/>
+                return <FilterBlock key={key} keyFilter={key}/>
             })}
             <div className="filter-buttons">
                 <ClearFilters/>

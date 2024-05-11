@@ -1,9 +1,9 @@
-import { MouseEvent, useEffect, useRef } from "react";
+import { MouseEvent, useRef } from "react";
 import { TabList } from "@/features/index";
-import {ReactComponent as CloseImg} from "@/images/icon-close.svg"
+import { ReactComponent as CloseImg } from "@/images/icon-close.svg"
 import { toggleSidebar } from "../model/sidebar-slice";
 import { useDispatch } from "react-redux";
-import { clearFilters } from "@/widgets/filter/model/filter-cards-slice";
+import { useFocusEffect } from "@/shared/hooks/useFocusEffect";
 
 export function Sidebar(){
     const dispatch = useDispatch()
@@ -12,28 +12,23 @@ export function Sidebar(){
     function handleClick(){
         if (window.innerWidth <= 1024){
             document.documentElement.style.overflow = '';
-            dispatch(clearFilters(null))
             dispatch(toggleSidebar(null))
         }
     }
 
-    function handleClickSb(event: MouseEvent<HTMLDivElement> ){
+    function handleClickOutside(event: MouseEvent<HTMLDivElement> ){
         if (sidebarRef.current === event.target){
             document.documentElement.style.overflow = '';
             dispatch(toggleSidebar(null))
         }
     }
 
-    useEffect(()=>{
-        if (sidebarRef.current){
-            sidebarRef.current.focus()
-        }
-    }, [])
-
-    return <div ref={sidebarRef} onClick={handleClickSb} className="sidebar">
+    useFocusEffect(sidebarRef)
+    
+    return <div ref={sidebarRef} onClick={handleClickOutside} className="sidebar">
         <div className="sidebar-content">
             <div onClick={handleClick}><CloseImg/></div>
-            <TabList handleClick={handleClick} className="sidebar"/>
+            <TabList className="sidebar"/>
         </div>
     </div>
 }

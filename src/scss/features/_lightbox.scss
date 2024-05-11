@@ -46,6 +46,7 @@
         }
     }
     &-item{
+        background-color: $primaryBack;
         width: 6rem;
         height: 6rem;
         border: 3px solid $LightBoxBorder;
@@ -96,36 +97,15 @@
         display: block;
         @media (min-width: 540px) {
             display: none; 
-        }   
-        
-        &_prev{
-            background-color: $primaryBack;
-            width: 2rem;
-            height: 2.2rem;
-            border-radius: $mainRadius;
-            padding-top: -1rem;
-            padding-left: 0.5rem;
-            align-items: center;
-            position: absolute;
-            border: 3px solid $mainBorder;
-            left: -0.8rem;
-            top: 45%;
-            z-index: 5;
-            transform: rotate(180deg);
         }
-        &_next{
-            background-color: $primaryBack;
-            width: 2rem;
-            height: 2.2rem;
-            border-radius: $mainRadius;
-            padding-top: -1rem;
-            padding-left: 0.5rem;
-            align-items: center;
-            position: absolute;
-            border: 3px solid $mainBorder;
-            right: -0.8rem;
-            top: 45%;
-            z-index: 5;
+        
+        &_left{
+            @include next-mobile-slider();
+            transform: rotate(180deg);
+            left: -0.8rem;
+        }
+        &_right{
+            @include next-mobile-slider();
             
         }
     }

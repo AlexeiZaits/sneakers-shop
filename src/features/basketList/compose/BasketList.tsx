@@ -1,11 +1,11 @@
-import { BasketItem } from "@/entities/BasketItem"
+import { BasketItem } from "@/entities/basketItem"
 import { RootState } from "@/store.ts"
 import { useSelector } from "react-redux"
 import { BasketCheckout } from "./BasketCheckout"
 
 export function BasketList(){
     const {cartList} = useSelector((state: RootState) => state.cartList)
-
+    
     return <div className="cart-list">
         {cartList.map((item)=> {
             return <BasketItem amount={item.amount} 

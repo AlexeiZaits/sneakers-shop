@@ -1,14 +1,18 @@
 import { clearFilters } from "@/widgets/filter/model/filter-cards-slice"
-import { useDispatch } from "react-redux"
 import { toggleFilter } from "../model/filter-controls-slice"
+import { useAppDispatch } from "@/shared/hooks/storeHooks"
+import { Button } from "@/shared/ui/button"
+
 
 export function ClearFilters(){
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     
     function handleClick(){
         dispatch(clearFilters(null))
         dispatch(toggleFilter(false))
     }
 
-    return <button onClick={handleClick} className="filter-buttons_item">Clear</button>
+    return <Button onClick={handleClick}>
+        Clear
+    </Button>
 }

@@ -1,32 +1,24 @@
-import { ICard } from "@/features/cardList/lib/interfaces"
-import { LightBox } from "@/features/ligthBox"
-import { useDispatch, useSelector } from "react-redux"
-import { useLoaderData, useLocation } from "react-router-dom"
-import { setCard } from "../model/collection-item-slice"
-import { useEffect } from "react"
-import { RootState } from "@/store.ts"
 import { CollectionItemInfo } from "../ui/CollectionItemInfo"
 import { Links } from "@/shared/index"
-import { resetAmount } from "@/features/addToCart/model/calc-amount-slice"
+import { LightBox } from "@/widgets/index"
+import { useLocation } from "react-router-dom"
+import { ReactNode } from "react"
+import { useSetCard } from "../hook/use-set-card"
 
+interface ICollectionItem{
+    children?: ReactNode
+}
 
-export function CollectionItem(){
+export function CollectionItem({children} : ICollectionItem){
     const location = useLocation()
-    const dispatch = useDispatch()
-    const collectionItem = useSelector((state: RootState) => state.collectionItem)
-    const { card } = useLoaderData() as { card: {data: ICard, imgs: string[]} }
-
-    useEffect(()=> {
-        dispatch(setCard(card))
-        dispatch(resetAmount(null))
-    }, [collectionItem,card, dispatch])
+    const card = useSetCard()
     
-    console.log(card)
     return <div className="main">
         <Links pathname={location.pathname} name={card.data.name}/>
         <div className="collection">
             <LightBox/>
             <CollectionItemInfo/>
         </div>
+        {children}
     </div>
 }

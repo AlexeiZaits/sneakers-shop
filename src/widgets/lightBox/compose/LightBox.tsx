@@ -1,13 +1,13 @@
 import { useState } from "react"
-import { SliderLightBox } from "@/features/ligthBox/compose/SliderLightBox"
-import { CurrentLightBox } from "@/features/ligthBox/compose/CurrentLightBox"
-import { ListLightBox } from "@/features/ligthBox/compose/ListLIghtBox"
+import { CurrentLightBox, ListLightBox, SliderControler } from "@/features/index"
+import { useAppSelector } from "@/shared/hooks/storeHooks"
 
 export function LightBox(){
     const [currentImg, setCurrentImg] = useState<number>(0)
+    const {imgs} = useAppSelector(state => state.collectionItem)
     
     return <div className="box">
-        <SliderLightBox currentImg={currentImg} setCurrentImg={setCurrentImg}/>
+        <SliderControler currentList={imgs} setCurrentState={setCurrentImg} className="box-slider"/>
         <CurrentLightBox currentImg={currentImg} />
         <ListLightBox currentImg={currentImg} setCurrentImg={setCurrentImg}/>
     </div>

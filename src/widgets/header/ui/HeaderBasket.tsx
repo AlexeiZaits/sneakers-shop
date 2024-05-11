@@ -8,7 +8,8 @@ export function HeaderBasket(){
     const dispatch = useDispatch()
     const {basket, amount} = useSelector((state: RootState) => state.basket)
     
-    function handleClick(){
+    function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>){
+        event.preventDefault()
         dispatch(toggleBasket(true))
     }
 

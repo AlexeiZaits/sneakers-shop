@@ -1,11 +1,15 @@
 import { Outlet, createBrowserRouter } from "react-router-dom";
 import { App } from "src/app";
-import { CheckoutOrder, CollectionItem, Collections, Contact, ErrorPage, Men, Women } from "../pages";
+import { CheckoutOrder, CollectionItem, Contact, ErrorPage, MainLayout } from "../pages";
 import { Home } from "@/pages/Home";
-
 import { ICard } from "@/features/cardList/lib/interfaces";
-import { apiGetCard } from "./api/apiGetCard";
-import { apiGetCards } from "./api/apiGetCards";
+import { apiGetCard } from "../shared/api/apiGetCard";
+import { apiGetCards } from "../shared/api/apiGetCards";
+import { Modal } from "@/shared/ui/modal";
+import { LightBox } from "../widgets";
+import { GoBackClick } from "@/features/goBackPage/ui/GoBackClick";
+import { GoBackKeyDown, GoBackOnBlur } from "@/features/goBackPage";
+import { Button } from "@/shared/ui/button";
 
 export const router = createBrowserRouter([
     { 
@@ -18,57 +22,57 @@ export const router = createBrowserRouter([
           element: <Home />,
         },
         {
-          path:  "collections/",
-          element: <Collections />,
+          path:  ":category",
+          element: <MainLayout/>,
+          loader: cardsLoader
         },
-        { path: "collections/:collectionId",
+        { path: ":category/:collectionId",
           element: <CollectionItem/>,
           loader: cardLoader,
         },
-        { 
-          path:  "men/",
-          element: <Men/>,
-        },
-        { path: "men/:collectionId",
-          element: <CollectionItem/>,
-          loader: cardLoader,
-        },
-        { 
-          path:  "women/",
-          element: <Women />,
-        },
-        { path: "women/:collectionId",
-          element: <CollectionItem/>,
-          loader: cardLoader,
-        },
-        { path: "women/:collectionId/modal",
-          element: <CollectionItem/>,
+        { path: ":category/:collectionId/modal",
+          element: <CollectionItem>
+            <Modal>
+                <GoBackClick>
+                  <Button>
+                    X
+                  </Button>
+                </GoBackClick>
+                  <GoBackKeyDown>
+                    <GoBackOnBlur>
+                      <LightBox/>
+                    </GoBackOnBlur>
+                </GoBackKeyDown>
+            </Modal>
+          </CollectionItem>,
           loader: cardLoader,
         },
         {
-          path:  "contact/",
+          path:  "contact",
           element: <Contact/>,
         },
         {
-          path: "checkout-order/",
+          path: "checkout-order",
           element: <CheckoutOrder/>
         }
       ],
     },
   ]);
 
-export async function cardsLoader() {
-    const cards:ICard[] = await apiGetCards();
-    return { cards };
+export async function cardsLoader({params} : any) {
+    const data = await apiGetCards(params.category);
+    return data;
 }
 
 export async function cardLoader({params}:any) {
     const card:{data: ICard, imgs: string[]} = await apiGetCard(params.collectionId);
+
     if (card.data === undefined) {
       throw new Response("", {
         status: 404,
         statusText: "Not Found",
       });
     }
+
     return { card };
 }

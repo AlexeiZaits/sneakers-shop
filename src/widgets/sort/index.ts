@@ -1,1 +1,1 @@
-export { SortCard } from "./compose/SortCard"
+export { Sort } from "./compose/Sort"

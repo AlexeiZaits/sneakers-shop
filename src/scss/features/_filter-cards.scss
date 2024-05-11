@@ -1,30 +1,30 @@
 .filter{
-    
     @include t-bold();
     font-size: 0.9rem !important;
     width: 5rem;
-    
     height: 2.5rem;
     @media (min-width: 480px) {
         position: relative;
     }
-    &-title{
+    &-open{
+        @include t-bold();
         position: absolute;
         background-color: $primaryBack;
         width: 5rem;
         padding: 0.3rem;
-        padding-top: 0.5rem;
         text-align: center;
         height: 2.5rem;
         border-radius: 1rem;
         border: 2px solid  $mainBorder;
         cursor: pointer;
+        font-size: 0.9rem !important;
         
     }
     &-block{
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         &_list{
             display: flex;
             flex-direction: row;
@@ -36,25 +36,23 @@
         margin-top: 0;
     }
     &-list{
-      
         left: 0;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         border: 2px solid transparent;
         position: fixed;
         border-radius: $mainRadius;
         background-color: $primaryBack;
         width: 100%;
-        height: 85%;
+        height: 90%;
         padding: 1rem;
-        top: 6rem;
+        top: 5rem;
         z-index: 999;
         overflow: auto;
         @media (min-width: 480px) {
             border: 2px solid $mainBorder;
             height: auto;
-            top: 3.3rem;
+            top: 3.1rem;
             position: absolute;
             width: 28rem;
         }
@@ -67,22 +65,16 @@
         flex-direction: row;
         background-color: $opacityLightFilter;
         height: 2rem;
-
         @include t-main();
         color: $blackText;
         text-align: center;
-        
         border: 1.8px solid;
         border-radius: 1rem;
-        
         margin-top: 1rem;
         margin-right: 0.8rem;
-
-        padding-left: 0.4rem;
-        padding-top: 0.25rem;
-        padding-right: 0.4rem;
-
+        padding: 0.25rem 0.4rem;
         cursor: pointer;
+
         &_active{
             color: $textActive;
         }
@@ -103,9 +95,12 @@
         }
     }
     &-buttons{
+        
+        @media (min-width: $tablet) {
+            width: 60%;
+        }
         margin-top: 2rem;
         @include flex();
-        justify-content: flex-start!important;
         &_item{
             @include t-bold();
             background-color: $primaryBack;

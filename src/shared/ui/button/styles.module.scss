@@ -1,0 +1,44 @@
+@import "../../utils/index.scss";
+
+.button{
+    display: inline-flex;
+    height: 3rem;
+    border: none;
+    position: relative;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: $buttonBack;
+    border-radius: $mainRadius;
+    z-index: 0;
+    color: white;
+    cursor: pointer;
+    @media (min-width: 540px) {
+    }
+    &-img{
+        :not(:last-child){
+            margin-right: 0.5rem;
+        }
+    }
+    &-text{
+        @include t-bold();
+        color: $whiteText;
+        font-size: 1rem !important;
+    }
+    &:hover{
+        &::before{
+            opacity: 0.5;
+        }
+    }
+    &::before{
+        transition: all 0.5s;
+        content: "";
+        z-index: 1;
+        left: 0;
+        border-radius: $mainRadius;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: $primaryBack;
+    }
+}
