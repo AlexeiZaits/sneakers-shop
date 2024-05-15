@@ -1,9 +1,8 @@
-import { ToggleFilterItem } from "@/features/filterControlers";
 import { filterList } from "../lib/filterList";
 import { IFilterBlock } from "../lib/interface";
 import { useToggler } from "@/shared/hooks/use-toggler";
 import { Button } from "@/shared/ui/button";
-
+import { ToggleFilterItem } from "./toggleFilter";
 
 export function FilterBlock({keyFilter}: IFilterBlock){
     const {view, handleEvent} = useToggler()

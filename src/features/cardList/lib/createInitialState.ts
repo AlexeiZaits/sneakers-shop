@@ -1,4 +1,4 @@
-import { keysFilter } from "@/widgets/filter/lib/filterList";
+import { keysFilter } from "@/features/filterControlers/lib/filterList";
 import { initialStateFilter } from "./interfaces";
 
 export function createInitialState(){

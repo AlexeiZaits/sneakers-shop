@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ICard, initialStateFilter } from "../lib/interfaces";
 import { compareNew, comparePriceHigh, comparePriceLow } from "../lib/compare";
-import { IFilterCards } from "@/widgets/filter/lib/interface";
+import { IFilterCards } from "@/features/filterControlers/lib/interface";
 import { mergeList } from "../lib/mergeList";
 import { createInitialState } from "../lib/createInitialState";
 import { getNewList } from "../lib/getNewLIst";

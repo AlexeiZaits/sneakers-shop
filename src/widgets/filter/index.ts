@@ -1,1 +1,1 @@
-export {Filter} from "./compose/Filter"
+export {Filter} from "./ui/Filter"

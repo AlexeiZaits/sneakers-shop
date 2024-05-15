@@ -4,8 +4,8 @@ export const filterControlSlice = createSlice({
     name: "@filterControls",
     initialState: false,
     reducers: {
-        toggleFilter: (state, action) => {
-            return state = action.payload
+        toggleFilter: (state, _) => {
+            return state = !state
         }
     }
 })

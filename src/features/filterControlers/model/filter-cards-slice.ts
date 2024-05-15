@@ -14,9 +14,7 @@ export const filterCardsSlice = createSlice({
         removeValue: (state, action) => {
             state[action.payload.key] = state[action.payload.key].filter((item) => item !== action.payload.value)
         },
-        clearFilters: (state, _) => {
-            return state = createInitialState()
-        },
+        clearFilters: () => createInitialState()
     }
 })
 
