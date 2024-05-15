@@ -5,11 +5,7 @@ import { Home } from "@/pages/Home";
 import { ICard } from "@/features/cardList/lib/interfaces";
 import { apiGetCard } from "../shared/api/apiGetCard";
 import { apiGetCards } from "../shared/api/apiGetCards";
-import { Modal } from "@/shared/ui/modal";
-import { LightBox } from "../widgets";
-import { GoBackKeyDown, GoBackOnBlur } from "@/features/goBackPage";
-import { Button } from "@/shared/ui/button";
-import { ModalGood } from "@/widgets/modalGood";
+
 
 export const router = createBrowserRouter([
     { 
