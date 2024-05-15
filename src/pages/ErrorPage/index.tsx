@@ -1,1 +1,1 @@
-export { ErrorPage } from "./compose/ErrorPage"
+export { ErrorPage } from "./ui/ErrorPage"

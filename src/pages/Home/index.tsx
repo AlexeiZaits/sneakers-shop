@@ -1,1 +1,1 @@
-export { Home } from "./compose/Home"
+export { Home } from "./ui/Home"

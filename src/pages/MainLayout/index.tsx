@@ -1,2 +1,2 @@
-export { MainLayout } from "./compose/MainLayout"
+export { MainLayout } from "./ui/MainLayout"
 
