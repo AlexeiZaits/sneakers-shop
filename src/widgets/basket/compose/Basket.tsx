@@ -1,20 +1,22 @@
-import { useRef } from "react"
 import { toggleBasket } from "../model/basket-slice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store.ts";
 import { BasketList } from "@/features/basketList";
-import { handleBlur } from "@/shared/lib/handleBlur";
-import { useFocusEffect } from "@/shared/hooks/useFocusEffect";
+import { useFocusEffect } from "@/shared/hooks/use-focus-effect";
+
 
 export function Basket(){
     const dispatch = useDispatch()
-    const basketRef = useRef<HTMLDivElement>(null)
+    const [ref] = useFocusEffect()
     const {basket} = useSelector((state: RootState) => state.basket)
     const {cartList} = useSelector((state: RootState) => state.cartList)
     
-    useFocusEffect(basketRef)
+    function handleBlur(){
+        dispatch(toggleBasket(!basket))
+    }
+
     //TODO: model должен быть в фиче
-    return <div ref={basketRef} tabIndex={0} onBlur={()=>handleBlur(basket, toggleBasket, dispatch)} className="basket">
+    return <div ref={ref} tabIndex={0} onBlur={()=>handleBlur} className="basket">
         <div className="basket-header">
             <h2 className="basket-title">Cart</h2>
         </div>

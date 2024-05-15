@@ -1,13 +1,13 @@
-import { MouseEvent, useRef } from "react";
+import { MouseEvent } from "react";
 import { TabList } from "@/features/index";
 import { ReactComponent as CloseImg } from "@/images/icon-close.svg"
 import { toggleSidebar } from "../model/sidebar-slice";
 import { useDispatch } from "react-redux";
-import { useFocusEffect } from "@/shared/hooks/useFocusEffect";
+import { useFocusEffect } from "@/shared/hooks/use-focus-effect";
 
 export function Sidebar(){
     const dispatch = useDispatch()
-    const sidebarRef = useRef<HTMLDivElement>(null)
+    const [ref] = useFocusEffect()
 
     function handleClick(){
         if (window.innerWidth <= 1024){
@@ -17,15 +17,14 @@ export function Sidebar(){
     }
 
     function handleClickOutside(event: MouseEvent<HTMLDivElement> ){
-        if (sidebarRef.current === event.target){
+        if (ref.current === event.target){
             document.documentElement.style.overflow = '';
             dispatch(toggleSidebar(null))
         }
     }
 
-    useFocusEffect(sidebarRef)
      //TODO: переместить model в feat
-    return <div ref={sidebarRef} onClick={handleClickOutside} className="sidebar">
+    return <div ref={ref} onClick={handleClickOutside} className="sidebar">
         <div className="sidebar-content">
             <div onClick={handleClick}><CloseImg/></div>
             <TabList className="sidebar"/>

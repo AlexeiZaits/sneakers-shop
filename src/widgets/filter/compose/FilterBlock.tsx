@@ -1,16 +1,18 @@
-import { ToggleFilter } from "@/features/filterControlers";
+import { ToggleFilterItem } from "@/features/filterControlers";
 import { filterList } from "../lib/filterList";
 import { IFilterBlock } from "../lib/interface";
-import { useState } from "react";
+import { useToggler } from "@/shared/hooks/use-toggler";
+import { Button } from "@/shared/ui/button";
+
 
 export function FilterBlock({keyFilter}: IFilterBlock){
-    const [view, setView] = useState(true)
-    
+    const {view, handleEvent} = useToggler()
+    // className="filter-block_title"
     return <div key={keyFilter} className={`filter-block`}>
-        <p onClick={() => setView(prevState => !prevState)} style={{"width": "5rem"}} className="filter-block_title">{keyFilter}</p>
+        <Button onClick={handleEvent} >{keyFilter}</Button>
         {view && <div className="filter-block_list">
             {filterList[keyFilter].map((item)=> {
-            return <ToggleFilter key={item} item={item} keyItem={keyFilter}/>
+            return <ToggleFilterItem key={item} item={item} keyItem={keyFilter}/>
             })}
         </div>}
     </div>
