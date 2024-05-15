@@ -7,7 +7,6 @@ import { apiGetCard } from "../shared/api/apiGetCard";
 import { apiGetCards } from "../shared/api/apiGetCards";
 import { Modal } from "@/shared/ui/modal";
 import { LightBox } from "../widgets";
-import { GoBackClick } from "@/features/goBackPage/ui/GoBackClick";
 import { GoBackKeyDown, GoBackOnBlur } from "@/features/goBackPage";
 import { Button } from "@/shared/ui/button";
 
@@ -33,11 +32,9 @@ export const router = createBrowserRouter([
         { path: ":category/:collectionId/modal",
           element: <CollectionItem>
             <Modal>
-                <GoBackClick>
                   <Button>
                     X
                   </Button>
-                </GoBackClick>
                   <GoBackKeyDown>
                     <GoBackOnBlur>
                       <LightBox/>
