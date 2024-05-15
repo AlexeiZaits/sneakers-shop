@@ -1,5 +1,5 @@
+import { clearFilters } from "@/features/filterControlers/model/filter-cards-slice"
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/storeHooks"
-import { clearFilters } from "@/widgets/filter/model/filter-cards-slice"
 import { toggleSidebar } from "@/widgets/sidebar/model/sidebar-slice"
 
 export function useClickTab(){
@@ -10,7 +10,7 @@ export function useClickTab(){
         if (sidebarView){
             dispatch(toggleSidebar(null))
         }
-        dispatch(clearFilters(null))
+        dispatch(clearFilters())
     }
     
     return {handleClick}
