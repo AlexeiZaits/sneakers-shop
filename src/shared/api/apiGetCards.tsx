@@ -8,7 +8,6 @@ export async function apiGetCards(category?: string, argCards?: ICard[]): Promis
     if (!(category && ["men", "women", "collections", "new"].includes(category))){
         throw new Error("wrong category")
     }
-    if (argCards?.length) return {cards: argCards, category: category}
     try {
         const response = await axios.get('https://api.github.com/repos/AlexeiZaits/api/contents/cards/%D1%81ards.json', {
             headers: {
