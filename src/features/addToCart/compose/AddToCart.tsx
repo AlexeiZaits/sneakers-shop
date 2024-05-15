@@ -1,5 +1,5 @@
-import { AddButton } from "./AddButton";
-import { CalcAmount } from "./CalcAmount";
+import { AddButton } from "../ui/AddButton";
+import { CalcAmount } from "../ui/CalcAmount";
 
 export function AddToCart(){
     return <div className="add-to-cart">
