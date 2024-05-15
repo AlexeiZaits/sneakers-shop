@@ -1,17 +1,13 @@
 import { BasketItem } from "@/entities/basketItem"
-import { RootState } from "@/store.ts"
-import { useSelector } from "react-redux"
 import { BasketCheckout } from "./BasketCheckout"
+import { useAppSelector } from "@/shared/hooks/storeHooks"
 
 export function BasketList(){
-    const {cartList} = useSelector((state: RootState) => state.cartList)
-    
+    const {cartList} = useAppSelector(state => state.cartList)
+    //TODO: в засимости от страницы рендерить разные карточки
     return <div className="cart-list">
         {cartList.map((item)=> {
-            return <BasketItem amount={item.amount} 
-            id={item.id} image={item.image} 
-            name={item.name} discountPrice={item.discountPrice} 
-            finalyPrice={item.finalyPrice} key={item.id}/>
+            return <BasketItem key={item.id} {...item}/>
         })}
         {cartList.length ? <BasketCheckout/> : null}
     </div>

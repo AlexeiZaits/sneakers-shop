@@ -1,11 +1,11 @@
-import { toggleBasket } from "@/widgets/basket/model/basket-slice"
-import { useDispatch } from "react-redux"
+import { Button } from "@/shared/ui/button"
 import { Link } from "react-router-dom"
+import { useBasketToggle } from "../hook/use-basket-toggle"
 
 export function BasketCheckout(){
-    const dispatch = useDispatch()
+    const {handleClick} = useBasketToggle()
     
     return <Link to={"/sneakers-shop/checkout-order"} className="add-button basket-checkout">
-    <span onClick={() => dispatch(toggleBasket(false))}>Checkout</span>
+        <Button onClick={handleClick}>Checkout</Button>
     </Link>
 }
