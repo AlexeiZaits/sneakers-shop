@@ -9,6 +9,7 @@ import { Modal } from "@/shared/ui/modal";
 import { LightBox } from "../widgets";
 import { GoBackKeyDown, GoBackOnBlur } from "@/features/goBackPage";
 import { Button } from "@/shared/ui/button";
+import { ModalGood } from "@/widgets/modalGood";
 
 export const router = createBrowserRouter([
     { 
@@ -31,16 +32,7 @@ export const router = createBrowserRouter([
         },
         { path: ":category/:collectionId/modal",
           element: <CollectionItem>
-            <Modal>
-                  <Button>
-                    X
-                  </Button>
-                  <GoBackKeyDown>
-                    <GoBackOnBlur>
-                      <LightBox/>
-                    </GoBackOnBlur>
-                </GoBackKeyDown>
-            </Modal>
+            <ModalGood/>
           </CollectionItem>,
           loader: cardLoader,
         },
