@@ -1,21 +1,12 @@
 import { CartImg } from "@/images/icon-cart";
+import { useHeader } from "../hook/use-header";
 import avatar from "@/images/git-hub-img.png";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/store.ts";
-import { toggleBasket } from "../../basket/model/basket-slice";
 
 export function HeaderBasket(){
-    //
-    const dispatch = useDispatch()
-    const {basket, amount} = useSelector((state: RootState) => state.basket)
-    
-    function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>){
-        event.preventDefault()
-        dispatch(toggleBasket(true))
-    }
+    const {handleClickBasket, basket, amount} = useHeader()
 
     return <div className='header-box'>
-        <div onClick={handleClick} className="header-cart">
+        <div onClick={handleClickBasket} className="header-cart">
             <CartImg fill={basket}/>
             {amount ? <div className="header-amount">{amount}</div> : null}
         </div>
