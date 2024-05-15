@@ -8,9 +8,7 @@ export function OrderList(){
     return <div className="order">
         <span className="order-title">Your order</span>
         {cartList.length ? cartList.map(item => {
-            return <OrderItem key={item.id} amount={item.amount} 
-            id={item.id} image={item.image} discount={item.discount}
-            name={item.name} finalyPrice={item.finalyPrice} price={item.price} />
+        return <OrderItem key={item.id} {...item} />
         }): null}
         <span className="order-total">Total: ${cartList.reduce((acc, item) => acc+item.finalyPrice, 0)}</span>
     </div>

@@ -13,8 +13,10 @@ export const sliderControlerSlice = createSlice({
     initialState,
     reducers: {
         setCurrentSlide: (state, action) => {
-            state += action.payload
-        }
-        cleanInitialState: () => initialState
+            state.currentSlide = action.payload
+        },
+        cleanSliderControler: () => initialState
     }
 })
+
+export const { setCurrentSlide, cleanSliderControler } = sliderControlerSlice.actions

@@ -1,21 +1,14 @@
 import { ICard } from "@/features/cardList/lib/interfaces"
-import {ReactComponent as Next} from "@/images/icon-next.svg"
+import { ReactComponent as Next } from "@/images/icon-next.svg"
+import { useSliderControler } from "../hooks/use-slider-controler"
 
 interface ISliderControler{
-    setCurrentState: (value: React.SetStateAction<number>) => void,
     currentList: ICard[] | string[],
     className?: string
-}   
+}
 
-export function SliderControler({setCurrentState, currentList, className}:ISliderControler){
-    
-    function handleClickLeft(){
-        setCurrentState(prevCard => prevCard === 0 ? currentList.length-1: prevCard -1)
-    }
-    
-    function handleClickRigth(){
-        setCurrentState(prevCard => prevCard+1 === currentList.length ? 0: prevCard  + 1)
-    }
+export function SliderControler({currentList, className}:ISliderControler){
+    const {handleClickLeft, handleClickRigth} = useSliderControler({currentList})
 
     return <div className={className ?  className :`slider-controler`}>
         <div onClick={handleClickLeft} className= {className ?  className+"_left" :`slider-controler_left`}><Next/></div>

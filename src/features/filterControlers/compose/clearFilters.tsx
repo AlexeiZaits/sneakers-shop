@@ -3,7 +3,6 @@ import { toggleFilter } from "../model/filter-controls-slice"
 import { useAppDispatch } from "@/shared/hooks/storeHooks"
 import { Button } from "@/shared/ui/button"
 
-
 export function ClearFilters(){
     const dispatch = useAppDispatch()
     

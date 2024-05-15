@@ -11,7 +11,7 @@ export function CheckoutOrder({number, setCheck}:Omit<ISendOrder,  "check" | "se
     function handleClick(){
         if(number.length === 12){
             navigate("/sneakers-shop")
-            dispatch(checkoutCart(null))
+            dispatch(checkoutCart())
             dispatch(resetAmount(null))
             
         }else{

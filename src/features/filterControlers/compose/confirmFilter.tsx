@@ -1,4 +1,3 @@
-
 import { Button } from "@/shared/ui/button"
 import { toggleFilter } from "../model/filter-controls-slice"
 import { useAppDispatch } from "@/shared/hooks/storeHooks"
@@ -12,6 +11,6 @@ export function ConfirmFilter(){
     }
 
     return <Button onClick={handleClick}>
-    Confirm
+        Confirm
     </Button>
 }

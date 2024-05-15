@@ -1,23 +1,15 @@
-import { useState } from "react";
 import { SliderItem } from "@/entities/sliderItem";
-import { useSetCarusel } from "../hooks/useSetCarusel";
-import { visibleCardList } from "@/features/cardList/model/card-list-slice";
-import { useAppSelector } from "@/shared/hooks/storeHooks";
-import { useGetCards } from "../hooks/useGetCards";
+import { useSetCarusel } from "../hooks/use-set-carusel";
+import { useGetCards } from "../hooks/use-get-cards";
 
-export function SliderList(){
-    const {cardList} = useAppSelector(state => state.cardList)
-    const [currentCard, setCurrenCard] = useState(0)
-    const [carusel, setCarusel] = useState(false)
-    const filterCardList = visibleCardList(cardList, "new")
+export function SliderList(){   
+    const { cardsSlider } = useGetCards()
+    const { currentSlide } = useSetCarusel()
     
-    useGetCards()
-    useSetCarusel(filterCardList, carusel, setCarusel, setCurrenCard)
-
     return <>
-            {filterCardList.length && filterCardList.map((item, index) => {
-                return <SliderItem key={index} item={item} index={index} currentCard={currentCard}/> 
-            })}
+            {cardsSlider.length ? cardsSlider.map((item, index) => {
+                return <SliderItem key={item.id} item={item} index={index} currentCard={currentSlide}/> 
+            }) : null}
         </>
 }
 

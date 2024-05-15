@@ -1,14 +1,13 @@
-import { KeyboardEvent, useRef } from "react";
+import { KeyboardEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function useBack(){
     const navigate = useNavigate();
-    const backRef = useRef(null)
 
     function handleClick(){
         navigate(-1)
     }
-
+    
     function handleKeyDown(e:KeyboardEvent<HTMLDivElement>){
         e.code === "Escape" && navigate(-1)
     }
@@ -17,5 +16,5 @@ export function useBack(){
         navigate(-1)
     }
     
-    return {handleClick, handleKeyDown, handleBlur, backRef}
+    return {handleClick, handleKeyDown, handleBlur}
 }

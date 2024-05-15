@@ -6,7 +6,7 @@ interface IFilterItem{
     keyItem: number|string,
 }
 
-export function ToggleFilter({item, keyItem}:IFilterItem){
+export function ToggleFilterItem({item, keyItem}:IFilterItem){
     const filterCardsList = useAppSelector(state => state.filterCardsList)
     const dispatch = useAppDispatch()
     

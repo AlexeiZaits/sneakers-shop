@@ -8,14 +8,11 @@ import { getNewList } from "../lib/getNewLIst";
 
 interface ICardListSlice {
     cardList: ICard[],
-    sort: string,
 }
 
 export const initialState: ICardListSlice = {
     cardList: [],
-    sort: "Recomended", 
 }
-
 
 export const CardListSlice = createSlice({
     name: "@cardList",
@@ -24,15 +21,12 @@ export const CardListSlice = createSlice({
         setCardList: (state, action: PayloadAction<ICard[]>) => {
             state.cardList = action.payload
         },
-        setSort: (state, action: PayloadAction<string>) => {
-            state.sort = action.payload
-        }
     }
 })
 
-export const { setCardList, setSort } = CardListSlice.actions;
+export const { setCardList } = CardListSlice.actions;
 
-export function visibleCardList(cardList: ICard[],  filter: string|undefined, valueFilter?: string){
+export function visibleCardList(cardList: ICard[] = [],  filter: string|undefined, valueFilter?: string){
     switch (filter) {
         case "new":
             return cardList.filter((data: ICard) => data.isNew === true)
@@ -93,7 +87,7 @@ export function filterCardsList(filterObj:IFilterCards, cardList: ICard[]){
             }
         }
     }
-
+    
     //убираю списки которые равны 0 и сортирую по длине, чтобы первый элемент по длине был самым маленьким
     let newlist = getNewList(initialState)
     

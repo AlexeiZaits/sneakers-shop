@@ -1,3 +1,3 @@
-export {CurrentLightBox} from "./compose/CurrentLightBox"
-export {ListLightBox} from "./compose/ListLightBox"
+export {CurrentLightBox} from "./ui/CurrentLightBox"
+export {ListLightBox} from "./ui/ListLightBox"
 

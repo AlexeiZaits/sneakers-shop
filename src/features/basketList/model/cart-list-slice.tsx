@@ -22,9 +22,7 @@ export const cartListSlice = createSlice({
             console.log(action.payload)
             state.cartList = state.cartList.filter((item) => item.id !== action.payload)
         },
-        checkoutCart: (state, _) => {
-            state.cartList = []
-        }   
+        checkoutCart: () => initialState,
         
     }
 })
