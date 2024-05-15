@@ -7,6 +7,7 @@ interface IButton{
     tabIndex?: number,
     onClick?: () => void,
     onMouseEnter?: () => void,
+    onMouseLeave?: () => void,
 }
 
 export const Button = ({ imgSrc, children, ...restProps }: IButton) => {
