@@ -5,11 +5,11 @@ import { useToggleWidjet } from "@/shared/hooks/use-toggle-widjet";
 
 export function Basket(){
     const {cartList} = useAppSelector(state => state.cartList)
-    const {widjet, handleEvent} = useToggleWidjet("basket")
+    const {widjet} = useToggleWidjet("basket")
     const [ref] = useFocusEffect(widjet)
-
+    //TODO: придумать решение onBlur={() => handleEvent()}
     return <>
-    {widjet && <div ref={ref} tabIndex={0} onBlur={() => handleEvent()} className="basket">
+    {widjet && <div ref={ref} tabIndex={0} className="basket">
         <div className="basket-header">
             <h2 className="basket-title">Cart</h2>
         </div>
