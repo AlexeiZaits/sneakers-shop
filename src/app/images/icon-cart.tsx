@@ -4,7 +4,7 @@ interface ICartImg{
 }
 
 export function CartImg({fill}:ICartImg){
-
+    
     const fillImg = fill ? "#000000" : "#69707D" ;
     
     return <svg width="22" className="cart-img"   height="20" xmlns="http://www.w3.org/2000/svg">
