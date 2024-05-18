@@ -1,5 +1,5 @@
-import { ReactComponent as Minus } from "@/images/icon-minus.svg"
-import { ReactComponent as Plus } from "@/images/icon-plus.svg"
+import { ReactComponent as Minus } from "@/app/images/icon-minus.svg"
+import { ReactComponent as Plus } from "@/app/images/icon-plus.svg"
 import { useCalc } from "../hook/use-calc"
 import { useReset } from "../hook/use-reset"
 

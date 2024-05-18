@@ -1,4 +1,4 @@
-import {  CartImg } from "@/images/icon-cart"
+import {  CartImg } from "src/app/images/icon-cart"
 import { useAddCart } from "../hook/use-add-cart"
 
 export function AddButton(){

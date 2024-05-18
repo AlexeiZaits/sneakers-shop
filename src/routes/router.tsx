@@ -5,7 +5,7 @@ import { Home } from "@/pages/Home";
 import { ICard } from "@/features/cardList/lib/interfaces";
 import { apiGetCard } from "../shared/api/apiGetCard";
 import { apiGetCards } from "../shared/api/apiGetCards";
-
+import { ModalGood } from "@/widgets/index";
 
 export const router = createBrowserRouter([
     { 

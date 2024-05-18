@@ -1,1 +1,1 @@
-export { SliderItem } from "./compose/SliderItem"
+export { SliderItem } from "./ui/SliderItem"

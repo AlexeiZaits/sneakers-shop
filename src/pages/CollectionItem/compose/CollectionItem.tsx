@@ -1,21 +1,16 @@
-import { CollectionItemInfo } from "../ui/CollectionItemInfo"
 import { LightBox } from "@/widgets/index"
-import { ReactNode } from "react"
-import { useSetCard } from "../hook/use-set-card"
-import { Links } from "@/features/links"
+import { AddToCart, CollectionItemInfo, Links } from "@/features/index"
+import { IChildren } from "@/shared/lib/interfaces"
 
-interface ICollectionItem{
-    children?: ReactNode
-}
-
-export function CollectionItem({children} : ICollectionItem){
-    useSetCard()
-    //TODO: model перенести в feat
+export function CollectionItem({children} : IChildren){
+    
     return <div className="main">
         <Links/>
         <div className="collection">
             <LightBox/>
-            <CollectionItemInfo/>
+            <CollectionItemInfo>
+                <AddToCart/>
+            </CollectionItemInfo>
         </div>
         {children}
     </div>

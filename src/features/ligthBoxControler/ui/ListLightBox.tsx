@@ -10,5 +10,5 @@ export function ListLightBox(){
                 <img className="box-item_img"  src={linkImg(data.id)+item} alt=""/>
             </div>
         } )}
-</div>
+    </div>
 }

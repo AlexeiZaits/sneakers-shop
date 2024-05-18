@@ -2,8 +2,8 @@ import { useAppDispatch, useAppSelector } from "@/shared/hooks/storeHooks"
 import { removeValue, setValue } from "../model/filter-cards-slice"
 
 export function useFilterItem(){
-    const filterCardsList = useAppSelector(state => state.filterCardsList)
     const dispatch = useAppDispatch()
+    const filterCardsList = useAppSelector(state => state.filterCardsList)
     
     function handleClick(key:string|number, value:string){
         if(!filterCardsList[key].includes(value)) 

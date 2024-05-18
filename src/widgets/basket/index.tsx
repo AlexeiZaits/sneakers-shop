@@ -1,2 +1,2 @@
-export { Basket } from "./compose/Basket"
+export { Basket } from "./ui/Basket"
 

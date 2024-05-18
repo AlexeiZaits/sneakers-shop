@@ -5,6 +5,7 @@ import { IFilterCards } from "@/features/filterControlers/lib/interface";
 import { mergeList } from "../lib/mergeList";
 import { createInitialState } from "../lib/createInitialState";
 import { getNewList } from "../lib/getNewLIst";
+import { filteredByOr } from "../lib/filteredByOr";
 
 interface ICardListSlice {
     cardList: ICard[],
@@ -73,29 +74,12 @@ export function sortingCardList(cardList: ICard[], sort: string| undefined){
     }
 }
 
-// При добавление нового переключателя нужно только в visibleCardList добавить ключ и функцию фильтрации
-// filterObj сами переключатели фильтров имеют вид пример {price: ["51-100.99", "201-250"], color: ["red"], brand: []}
-export function filterCardsList(filterObj:IFilterCards, cardList: ICard[]){
-    const initialState: initialStateFilter = createInitialState()
 
-    // фильтрация по ||
-    for (const key in filterObj){
-        for (const item of filterObj[key]){
-            if (initialState[key].length) initialState[key] = [...initialState[key] ,...visibleCardList(cardList, key, item)]
-            else {
-                initialState[key] = visibleCardList(cardList, key, item)
-            }
-        }
-    }
+export function filterCardsList(filterSwitches:IFilterCards, cardList: ICard[]){
+    const initialState: initialStateFilter = createInitialState()
+    const filteredInitialState =  filteredByOr(filterSwitches, initialState, cardList)
+    let newlist = getNewList(filteredInitialState)
     
-    //убираю списки которые равны 0 и сортирую по длине, чтобы первый элемент по длине был самым маленьким
-    let newlist = getNewList(initialState)
+    return newlist.length >=1 ? mergeList(newlist[0], newlist.slice(1,newlist.length)) : cardList
     
-    if (newlist.length >= 1){
-        // делаю слияние списков по самому маленькому списку
-        return mergeList(newlist[0], newlist.slice(1,newlist.length))
-    }
-    else {
-        return cardList
-    }
 }   

@@ -12,10 +12,10 @@ export function FilterList(){
     })}
     <div className="filter-buttons">
         <Button onClick={() => handleEvent(true)}>
-            Clear 
+            Clear
         </Button>
         <Button onClick={handleEvent}>
-        Clear 
+            Confirm 
         </Button>
     </div>
     </>

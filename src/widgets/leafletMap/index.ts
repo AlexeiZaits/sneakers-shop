@@ -1,1 +1,1 @@
-export {LeafletMap} from "./compose/LeafletMap"
+export {LeafletMap} from "./ui/LeafletMap"

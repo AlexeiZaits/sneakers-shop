@@ -12,5 +12,5 @@ export function ModalGood(){
         <LightBox/>
       </GoBackOnBlur>
     </GoBackKeyDown>
-</Modal>
+  </Modal>
 }

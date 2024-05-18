@@ -1,14 +1,14 @@
 import { clearFilters } from "@/features/filterControlers/model/filter-cards-slice"
+import { toggleWidjet } from "@/features/togglerWidjets/model/toggler-widjets-slice"
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/storeHooks"
-import { toggleSidebar } from "@/widgets/sidebar/model/sidebar-slice"
 
 export function useClickTab(){
     const dispatch = useAppDispatch()
-    const sidebarView = useAppSelector(state => state.sidebar)
+    const {sidebar} = useAppSelector(state => state.togglerWidjets)
     
     function handleClick(){
-        if (sidebarView){
-            dispatch(toggleSidebar(null))
+        if (sidebar){
+            dispatch(toggleWidjet({key: "sidebar"}))
         }
         dispatch(clearFilters())
     }

@@ -8,7 +8,7 @@ export function Filter(){
     const {handleEvent} = useToggleFilter()
     
     return <div className="filter" onMouseLeave={() => handleEvent()}>
-        <Button onClick={() => handleEvent()}>
+        <Button onMouseEnter={() => handleEvent()}>
             Filters
         </Button>
         {filterView ? <div  className="filter-list">

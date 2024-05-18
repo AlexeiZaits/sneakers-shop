@@ -1,1 +1,1 @@
-export { BasketItem } from "./compose/BasketItem"
+export { BasketItem } from "./ui/BasketItem"

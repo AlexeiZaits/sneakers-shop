@@ -6,8 +6,8 @@ export function useToggleFilter(){
     const dispatch = useAppDispatch()
     
     function handleEvent(clear?: boolean){
-        dispatch(clearFilters())
-        clear && dispatch(toggleFilter(null))
+        dispatch(toggleFilter(null))
+        clear && dispatch(clearFilters())
     }
 
     return {handleEvent}

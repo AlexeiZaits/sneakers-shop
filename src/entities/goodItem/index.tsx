@@ -1,2 +1,2 @@
-export { GoodItem } from "./compose/goodItem"
+export { GoodItem } from "./ui/goodItem"
 

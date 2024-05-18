@@ -1,1 +1,1 @@
-export { Sidebar } from "./compose/Sidebar"
+export { Sidebar } from "./ui/Sidebar"

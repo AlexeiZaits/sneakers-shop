@@ -2,10 +2,10 @@ import { setCurrentSlide } from "@/features/sliderControler/model/slider-control
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/storeHooks"
 
 export function useLightBox(){
+    const dispatch = useAppDispatch()
     const {data, imgs} = useAppSelector(state  => state.collectionItem)
     const {currentSlide} = useAppSelector(state => state.sliderControler)
-    const dispatch = useAppDispatch()
-
+    
     function handleClick(index: number){
         dispatch(setCurrentSlide(index))
     }

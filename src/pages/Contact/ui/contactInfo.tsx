@@ -4,7 +4,7 @@ export function ContactInfo(){
     return <div className="contact-info">
         <span className="contact-info_title">Our contact data</span>
         <div className="contact-info_social">
-            {/* TODO: сделать через for */}
+            {/* TODO: сделать через for, придумать более лучшее оформление*/}
             <a href={contactList.geoLoc} target="_blank" rel="noopener noreferrer">
                 <span className="contact-info_link">We are located at Perm, Krisanova, 12a</span>
             </a>
