@@ -10,6 +10,6 @@ export function useCalcAmountGoods(){
         dispatch(calcAmountGoods(null))
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cartList])
-
+    
     return {amountGoods}
 }

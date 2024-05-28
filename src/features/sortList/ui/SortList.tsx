@@ -1,14 +1,16 @@
-import { useSort } from "@/shared/hooks/use-sort"
+import { getClassNames } from "@/shared/lib/getClassNames";
+import { useSort } from "../hook/use-sort"
 import { sortList } from "../lib/sortList"
+import styles  from "./styles.module.scss";
 
 export function SortList(){
-    const {handleClick, currentSort} = useSort()
+    const [currentSort, setSort] = useSort()
     
     return <>
     {sortList.map((item) => {
         return <span key={item} 
-        onClick={()=>handleClick(item)} 
-        className={`sort-choice_item ${currentSort === item ? "sort-choice_active": ""}`}>
+        onClick={()=>setSort(item)} 
+        className={getClassNames(currentSort === item, styles, "item", "active")}>
         {item}
         </span>
     })}

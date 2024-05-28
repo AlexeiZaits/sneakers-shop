@@ -1,1 +1,1 @@
-export {CheckoutOrder} from "./compose/CheckoutOrder"
+export {CheckoutOrder} from "./ui/CheckoutOrder"

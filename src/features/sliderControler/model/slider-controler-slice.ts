@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface IInitialState {
+interface ISliderControler{
     currentSlide: number,
-    listLength: number
+    sliderLength: number
 }
 
-export const initialState:IInitialState = {
+export const initialState:ISliderControler = {
     currentSlide: 0,
-    listLength: 0,
+    sliderLength: 0,
 }
 
 export const sliderControlerSlice = createSlice({
@@ -17,11 +17,11 @@ export const sliderControlerSlice = createSlice({
         setCurrentSlide: (state, action) => {
             state.currentSlide = action.payload
         },
-        setListLength: (state, action) => {
-            state.listLength = action.payload
+        setSliderLength: (state, action) => {
+            state.sliderLength = action.payload
         },
         cleanSliderControler: () => initialState
     }
 })
 
-export const { setCurrentSlide, setListLength, cleanSliderControler } = sliderControlerSlice.actions
+export const { setCurrentSlide, setSliderLength, cleanSliderControler } = sliderControlerSlice.actions

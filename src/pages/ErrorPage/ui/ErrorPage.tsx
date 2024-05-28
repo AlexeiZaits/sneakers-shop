@@ -1,8 +1,11 @@
+import { Wrapper } from "@/shared/ui"
+import styles from "./styles.module.scss";
+
 export function ErrorPage(){
     
-    return <div className="main">
-        <div className="error-page">
-            <span className="error-page_text">404 Not Found</span>
+    return <Wrapper>
+        <div className={styles.container}>
+            <span className={styles.text}>404 Not Found</span>
         </div>
-    </div>
+    </Wrapper>
 }

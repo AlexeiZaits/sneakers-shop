@@ -1,0 +1,17 @@
+@import "../../../shared/utils/index.scss";
+
+.collection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 1rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    @include t-bold();
+    word-break: break-word;
+
+    @media (min-width: $tablet) {
+        flex-direction: row;
+    }
+}

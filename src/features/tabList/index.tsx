@@ -1,1 +1,1 @@
-export { TabList } from "./compose/tabList"
+export { TabList } from "./ui/tabList"

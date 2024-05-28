@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styles from "./styles.module.scss";
 
 export interface imgLinkProps {
     text: string,
@@ -7,8 +8,8 @@ export interface imgLinkProps {
 }
 
 export function ImgLink({text, src, to}:imgLinkProps){
-    return <Link className="home-imgs_link" to={to}>
-        <img className="home-imgs_item" src={src} alt="forMen"/>
-        <span className="home-imgs_text">{text}</span>
+    return <Link className={styles.link} to={to}>
+        <img className={styles.img} src={src} alt="forMen"/>
+        <span className={styles.text}>{text}</span>
     </Link>
 }

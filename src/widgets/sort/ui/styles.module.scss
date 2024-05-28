@@ -1,0 +1,30 @@
+@import "../../../shared/utils/index.scss";
+
+.sort{
+    @include t-bold();
+    font-size: 0.9rem !important;
+    width: 13rem;
+    z-index: 4;
+    position: relative;
+    margin-left: 0.5rem;
+    @media (min-width: 340px) {
+        margin-left: 1rem;
+    }
+}
+
+.choice{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: $primaryBack;
+    width: 12rem;
+    
+    margin: 0 auto !important;
+    z-index: 4;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+    border: 2px solid  $mainBorder;
+    top: 3.2rem;
+}

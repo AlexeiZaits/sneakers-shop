@@ -1,0 +1,9 @@
+@import "../../../shared/utils/index.scss";
+
+.container{
+    @include flex();
+    justify-content: space-between;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    width: 25rem;
+}

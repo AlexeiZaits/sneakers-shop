@@ -1,0 +1,12 @@
+@import "../shared/utils/index.scss";
+
+.app{
+    width: calc(100% - 1rem);
+    max-width: 1260px;
+    position: relative;
+    margin: 0 auto;
+    
+    @media (min-width: $dekstop) {
+        width: 1260px;
+    }
+}

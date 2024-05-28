@@ -1,0 +1,31 @@
+@import "../../../shared/utils/index.scss";
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding-right: 66.5rem;
+}
+
+.check{
+    color: $errorText;
+}
+
+.input{
+    margin-top: 1rem;
+    width: 13rem;
+    height: 1.6rem;
+    border: 1px solid #cecece;
+    background: rgb(255, 125, 26, 0.05);
+
+    &:focus {
+        outline: none; 
+        border-color: $mainBorder;
+    }
+
+}
+
+.text{
+    width: 15rem;
+    color: $blackText;
+}

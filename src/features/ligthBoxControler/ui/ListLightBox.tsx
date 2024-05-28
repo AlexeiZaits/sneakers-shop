@@ -1,13 +1,17 @@
 import { linkImg } from "../lib/link"
-import { useLightBox } from "../hook/use-light-box"
+import { useCard } from "@/features/collectionItemInfo/hook/use-card"
+import { useSlide } from "@/features/sliderControler/hook/use-slider"
+import { getClassNames } from "@/shared/lib/getClassNames";
+import styles from "./list.module.scss";
 
 export function ListLightBox(){
-    const {imgs, data, currentSlide, handleClick} = useLightBox()
+    const [{data, imgs},] = useCard()
+    const [currentSlide, setSlide] = useSlide()
     
-    return <div className="box-list">
-        {imgs.map((item, index) => {
-            return <div onClick={() =>handleClick(index)} key={index}  className={`box-item ${index === currentSlide? "box-light": ""}`}>
-                <img className="box-item_img"  src={linkImg(data.id)+item} alt=""/>
+    return <div className={styles.list}>
+        {data && imgs.map((item, index) => {
+            return <div onClick={() => setSlide(index)} key={index}  className={getClassNames(index === currentSlide, styles, "item", "light")}>
+                <img className={styles.img} src={linkImg(data.id)+item} alt=""/>
             </div>
         } )}
     </div>

@@ -1,14 +1,16 @@
 import { CardList, Links } from "@/features/index"
+import { Wrapper } from "@/shared/ui"
 import { Filter, Sort } from "@/widgets/index"
+import styles from "./styles.module.scss";
 
 export function MainLayout(){
     
-    return <div className="main">
+    return <Wrapper>
         <Links/>
-        <div className="main-container">
+        <div className={styles.container}>
             <Filter/>
             <Sort/>
         </div>
         <CardList/>
-    </div>
+    </Wrapper>
 }

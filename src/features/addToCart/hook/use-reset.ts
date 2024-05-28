@@ -8,7 +8,7 @@ export function useReset(){
     
     useEffect(() => {
         return () => {
-            dispatch(resetAmount(null))
+            dispatch(resetAmount())
         }
     }, [])
 }

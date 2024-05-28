@@ -1,23 +1,24 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { resetCard, setCard } from "../model/collection-item-slice";
+import { ICollectionitem } from "../model/collection-item-slice";
 import { useLoaderData } from "react-router-dom";
-import { ICard } from "@/features/cardList/lib/interfaces";
-import { setListLength } from "@/features/sliderControler/model/slider-controler-slice";
+import { useCard } from "./use-card";
+import { useSliderLength } from "@/features/sliderControler/hook/use-slider-length";
+import { useCleanCard } from "./use-clean-card";
 
 export function useGetCard(){
-    const dispatch = useDispatch()
-    const { card } = useLoaderData() as { card: {data: ICard, imgs: string[]} }
+    const { card } = useLoaderData() as { card: ICollectionitem }
+    const [collectionitem, installCard] = useCard()
+    const [,setLength] = useSliderLength()
+    const cleanCard = useCleanCard()
     
     useEffect(()=> {
-        dispatch(setCard(card))
-        dispatch(setListLength(card.imgs.length))
+        installCard(card)
+        setLength(card.imgs.length)
         
-        return function cleanup(){
-            dispatch(resetCard())
-        }
+        return () => { cleanCard() }
         
-    }, [card, dispatch])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [card])
 
-    return card
+    return collectionitem
 }

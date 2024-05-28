@@ -1,0 +1,27 @@
+@import "../../../shared/utils/index.scss";
+
+.slider{
+    margin-top: 1rem;
+    z-index: 3;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    height: 45rem;
+}
+
+.title{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 10rem;
+    width: 100%;
+    @include t-bold();
+    text-align: center;
+    
+}

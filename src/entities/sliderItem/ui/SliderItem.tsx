@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
 import { ISliderItem } from "../lib/interfaces";
+import classNames from "classnames";
+import styles from "./styles.module.scss";
 
 export function SliderItem({index, item, currentCard}: ISliderItem){
-    return <Link to={`collections/${item.id}`} className={`slider-item 
-    ${index === currentCard ? "slider-item_active": ""}
-    ${index > currentCard? "slider-item_prev": ""}
-    ${index < currentCard? "slider-item_next": ""}`
-    }>
-        <img className="slider-img" src={item.image} alt="" />
-        <div className="slider-info">
-            <span className="slider-item_title">{item.name}</span>
-            <span className="slider-item_description">{item.description}</span>
-            <span className="slider-item_price">${item.price}</span>
+    //TODO: исправить стили
+    return <Link to={`collections/${item.id}`} className={classNames(styles.slider, {
+        [styles.active]: index === currentCard,
+        [styles.prev]: index > currentCard,
+        [styles.next]: index < currentCard,
+    })}>
+        <img className={styles.img} src={item.image} alt="" />
+        <div className={styles.info}>
+            <span className={styles.title}>{item.name}</span>
+            <span className={styles.description}>{item.description}</span>
+            <span className={styles.price}>${item.price}</span>
         </div> 
     </Link>
 }

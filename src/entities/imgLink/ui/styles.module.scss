@@ -1,0 +1,44 @@
+@import "../../../shared/utils/index.scss";
+
+.link{
+    z-index: 4;
+    @media (min-width: 640px) {
+        width: 49%;
+        
+    }
+    position: relative;
+    width:100%;
+}
+
+.link:hover{
+    transition: all 0.3s;
+    
+    .text{
+        transition-delay: 0.3s;
+        border-bottom-color: transparent;
+        
+    }
+}
+
+.text{
+    @include t-bold();
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $whiteText;
+    transition: all 0.3s;
+    border-bottom:  3px solid white;
+
+    @media (min-width: 640px) {
+        transform: translate(0,0);
+        top: 40%;
+        left: 39%;
+    }
+}
+
+.img{
+    width: 100%;
+    height: auto;
+}

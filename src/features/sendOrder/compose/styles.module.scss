@@ -1,0 +1,46 @@
+@import "../../../shared/utils/index.scss";
+
+.send{
+    @include t-main();
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+
+//TODO: под вопросом
+
+// .checkout{
+//     @include t-bold();
+//     font-size: 1.68rem !important;
+//     cursor: pointer;
+//     color: $whiteText;
+//     background-color: $buttonBack;
+//     width: 10rem;
+//     height: 3.3rem;
+//     border-radius: $mainRadius+0.75rem;
+//     border-color: $buttonBack;
+//     border-right: $buttonBack;
+//     border-bottom: $buttonBack;
+//     margin-top: 2.5rem;
+//     position: relative;
+//     text-align: center;
+//     &:hover{
+//         &::before{
+//             opacity: 1;
+//         }
+//     }
+//     &::before{
+//         opacity: 0;
+//         transition: all 0.5s;
+//         content: "";
+//         top: 50%;
+//         left: 49.5%;
+//         transform: translate(-50%, -50%);
+//         width: 102%;
+//         height: 109%;
+//         border-radius: $mainRadius+0.75rem;
+//         z-index: 3;
+//         position: absolute;
+//         background-color: $opacityLightBox;
+//     }
+// }

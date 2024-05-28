@@ -1,0 +1,12 @@
+@import "../../../shared/utils/index.scss";
+
+.container{
+    height: 8rem;
+    @include flex();
+    flex-direction: column;
+    font-size: 1rem;
+    @media (min-width: 540px) {
+        height: 4rem;
+        flex-direction: row;
+    }
+}

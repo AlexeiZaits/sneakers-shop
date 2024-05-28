@@ -1,1 +1,1 @@
-export { CollectionItem } from "./compose/CollectionItem"
+export { CollectionItem } from "./ui/CollectionItem"

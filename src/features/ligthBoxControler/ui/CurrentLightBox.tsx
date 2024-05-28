@@ -1,19 +1,25 @@
 import { linkImg } from "../lib/link"
 import { Link } from "react-router-dom"
-import { useLightBox } from "../hook/use-light-box"
 import { useLocationLast } from "../hook/use-location-last"
+import { useCard } from "@/features/collectionItemInfo/hook/use-card"
+import { useSlide } from "@/features/sliderControler/hook/use-slider"
+import styles from "./current.module.scss";
+import { getClassNames } from "../../../shared/lib/getClassNames"
+
+
 
 export function CurrentLightBox(){
-    const { imgs, currentSlide, data } = useLightBox()
+    const [{data, imgs},] = useCard()
+    const [currentSlide,] = useSlide()
     const { url } = useLocationLast()
     
     return (
-        <div className="box-current">
-            {imgs.map((item, index) => (
+        <div className={styles.current}>
+            {data && imgs.map((item, index) => (
                 url !== "modal" ? (
                     <Link key={index} to={`modal`}>
                         <img
-                            className={`box-current_img ${index === currentSlide ? "box-current_animation" : ""}`}
+                            className={getClassNames(index === currentSlide, styles, "img", "animation")}
                             src={linkImg(data.id) + item}
                             alt=""
                         />
@@ -21,7 +27,7 @@ export function CurrentLightBox(){
                 ) : (
                     <img
                         key={index}
-                        className={`box-current_img ${index === currentSlide ? "box-current_animation" : ""}`}
+                        className={getClassNames(index === currentSlide, styles, "img", "animation")}
                         src={linkImg(data.id) + item}
                         alt=""
                     />

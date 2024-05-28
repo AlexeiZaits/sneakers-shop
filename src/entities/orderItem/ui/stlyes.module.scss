@@ -1,0 +1,90 @@
+@import "../../../shared/utils/index.scss";
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 30rem;
+    margin: 0 auto;
+
+    @media (min-width: $tablet) {
+        margin:  0;
+    }
+}
+
+.order{
+    @include flex();
+    @include t-main();
+    margin-top: 2.8rem;
+    height: 12rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid $mainBorder;
+    position: relative;
+
+    @media (min-width: 990px) {
+        height: 7rem;
+    }
+
+}
+
+.containerImg{
+    position: relative;
+    overflow: hidden;
+    height: 6rem;
+    width: 10rem;
+}
+
+.img{
+    @include position-centre();
+    width: 10rem;
+    height: auto
+    
+}
+
+.flex{
+    @include flex();
+    flex-direction: column;
+    position: relative;
+    height: 3rem;
+    flex: 1;
+}
+
+.name{
+    color: $textActive;
+}
+
+.value{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    color: $blackText;
+}
+
+.amount{
+    margin-left: 1.3rem;
+    @media (min-width: $tablet) {
+        margin-left: 1.6rem;
+    }
+}
+
+.through{
+    margin-left: 1rem;
+    text-decoration: line-through;
+}
+
+.svg {
+    cursor: pointer;
+    &:hover use{   
+        fill: black;
+    }
+}
+
+.delete{
+    position: absolute;
+    bottom: 1.4rem;
+    right: 0;
+    @media (min-width: 990px) {
+        right: 1rem;
+        top: 2rem;
+    }
+}
+

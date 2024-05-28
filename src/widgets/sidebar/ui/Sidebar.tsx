@@ -1,8 +1,9 @@
 import { MouseEvent } from "react";
 import { TabList } from "@/features/index";
-import {ReactComponent as CloseImg} from "@/app/images/icon-close.svg"
+import { ReactComponent as CloseImg } from "@/shared/assets/images/icon-close.svg"
 import { useFocusEffect } from "@/shared/hooks/use-focus-effect";
 import { useToggleWidjet } from "@/shared/hooks/use-toggle-widjet";
+import styles from "./styles.module.scss";
 
 export function Sidebar(){
     const {widjet, handleEvent} = useToggleWidjet("sidebar")
@@ -14,10 +15,10 @@ export function Sidebar(){
         }
     }
     
-    return <>{widjet && <div ref={ref} onClick={handleClickOutside} className="sidebar">
-        <div className="sidebar-content">
+    return <>{widjet && <div ref={ref} onClick={handleClickOutside} className={styles.sidebar}>
+        <div className={styles.content}>
             <div onClick={handleEvent}><CloseImg/></div>
-            <TabList className="sidebar"/>
+            <TabList isSidebar={true}/>
         </div>
     </div>}
     </>

@@ -1,17 +1,11 @@
-import { Header } from '../widgets/header';
-import { Sidebar } from '../widgets/sidebar/ui/Sidebar';
-import { Basket } from '../widgets';
-import { ReactNode } from 'react';
+import { Basket, Header, Sidebar } from '@/widgets/index';
+import { IChildren } from '@/shared/lib/interfaces';
+import styles from "./styles.module.scss";
 
-interface IApp {
-  children: ReactNode
+export function App({children}:IChildren) {
 
-}
-
-export function App({children}:IApp) {
-  
   return (
-      <div className="app">
+      <div className={styles.app}>
         <Sidebar />
         <Basket />
         <Header />

@@ -1,0 +1,18 @@
+@import "../../../shared/utils/index.scss";
+
+.buttons{
+    @media (min-width: $tablet) {
+        width: 60%;
+    }
+    margin-top: 2rem;
+    @include flex();
+    &_item{
+        @include t-bold();
+        background-color: $primaryBack;
+        font-size: 1rem !important;
+        border-radius: $mainRadius;
+        border: 2px solid $mainBorder;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+}

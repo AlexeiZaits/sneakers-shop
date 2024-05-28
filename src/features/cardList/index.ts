@@ -1,1 +1,1 @@
-export { CardList } from "./compose/CardList"
+export { CardList } from "./ui/CardList"

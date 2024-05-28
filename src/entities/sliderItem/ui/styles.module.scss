@@ -1,0 +1,69 @@
+@import "../../../shared/utils/index.scss";
+
+.slider{
+    @include imgView();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    flex: 0 0 100%;
+    margin-top: 1rem;
+    z-index: 1;
+    height: 40rem;
+    top: 2rem;
+    left: 0;
+    margin-top: 1rem;
+    opacity: 0.3;
+    transition: transform 0.5s ease;
+    animation-duration: 1.5s;
+    animation-name: imgView;
+
+    @media (min-width: $tablet) {
+        flex-direction: row;
+        height: 45rem;
+        justify-content: space-between;
+    }
+
+}
+
+.info{  
+    display: flex;
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 10rem;
+
+    @media (min-width:$tablet) {
+        justify-content: space-between;
+        width: 50%;
+        margin: 0;
+        padding: 20rem 4rem;
+    }
+}
+
+.title{
+    @include t-bold();
+}
+
+.price{
+    @include t-bold();
+}
+
+.description{
+    @include t-main();
+}
+
+.active{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.prev{
+    transform: translateX(100%);
+}
+
+.next{
+    transform: translateX(-100%);
+}

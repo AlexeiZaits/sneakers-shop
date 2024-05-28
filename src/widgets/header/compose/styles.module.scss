@@ -1,0 +1,26 @@
+@import "../../../shared/utils/index.scss";
+
+.header {
+    width: calc(100% - 2rem);
+    @include flex();
+    background-color: $primaryBack;
+    position: fixed;
+    margin: 0 auto;
+    text-align: center;
+    height: 6rem;
+    border-bottom: 2px solid $headerBorder;
+    top: 0;
+    left: 0.85rem;
+    z-index: 100;
+    @media (min-width: $tablet) {
+        z-index: 0;
+        left: 0;
+        position: relative;
+    }
+    @media (min-width: $dekstop) {
+        position: relative;
+        padding: 0;
+        width: 1260px;
+        
+    }
+}

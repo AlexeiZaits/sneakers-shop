@@ -1,1 +1,1 @@
-export { SliderList } from "./compose/SliderList"
+export { SliderList } from "./ui/SliderList"

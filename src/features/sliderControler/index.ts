@@ -1,1 +1,1 @@
-export {SliderControler} from "./compose/SliderControler"
+export {SliderControler} from "./ui/SliderControler"

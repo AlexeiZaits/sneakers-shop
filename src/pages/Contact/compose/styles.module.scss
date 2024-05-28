@@ -1,0 +1,9 @@
+@import "../../../shared/utils/index.scss";
+
+.contact{
+    @include flex();
+    @include t-bold();
+    justify-content: space-around;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}

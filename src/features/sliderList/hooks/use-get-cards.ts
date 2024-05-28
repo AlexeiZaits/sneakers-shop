@@ -1,32 +1,34 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { apiGetCards } from "@/shared/api/apiGetCards";
-import { useAppDispatch, useAppSelector } from "@/shared/hooks/storeHooks";
 import { useEffect } from "react";
-import { setCardsSlider } from "../model/sliderListSlice";
-import { cleanSliderControler, setListLength } from "@/features/sliderControler/model/slider-controler-slice";
+import { useSliderLength } from "@/features/sliderControler/hook/use-slider-length";
+import { useCleanSlider } from "@/features/sliderControler/hook/use-clean-slider";
+import { useSliderList } from "./use-slider-list";
 
 export function useGetCards(){
-    const dispatch = useAppDispatch()
-    const { cardsSlider }  = useAppSelector(state => state.sliderList)
+    const [cardsSlider, setCards] = useSliderList()
+    const [, setLength] = useSliderLength()
+    const cleanSlider = useCleanSlider()
     
     useEffect(() => {
         if (cardsSlider.length === 0) {
             apiGetCards("new")
             .then(data => {
-                dispatch(setCardsSlider(data.cards))
+                setCards(data.cards)
             })
             .catch((error) => {
                 console.log(error)
             })
         }
+
         return () => {
-            dispatch(cleanSliderControler())
+            cleanSlider()
         }
         
-    }, [])
+    }, [cardsSlider])
 
     useEffect(() => {
-        dispatch(setListLength(cardsSlider.length))
+        setLength(cardsSlider.length)
     }, [cardsSlider])
 
     return { cardsSlider }

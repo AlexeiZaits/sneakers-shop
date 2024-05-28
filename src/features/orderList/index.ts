@@ -1,2 +1,2 @@
-export {OrderList} from "./compose/OrderList"
+export {OrderList} from "./ui/OrderList"
 

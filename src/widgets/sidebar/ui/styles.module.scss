@@ -1,0 +1,23 @@
+@import "../../../shared/utils/index.scss";
+
+.sidebar{
+    width: 100%;
+    height: calc(100vh + 3rem);
+    position: fixed;
+    z-index: 999;
+    background-color: $opacitySidebar;
+    overflow-y: hidden;
+    top: 0;
+}
+.content{
+    position: absolute;
+    width: 13rem;
+    height: 100%;
+    background-color: $primaryBack;
+    padding: 1rem;
+    animation-duration: 1.5s;
+    animation-name: sidebarView;
+    &:focus{
+        outline: 0px solid transparent; 
+    }
+}

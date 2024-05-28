@@ -1,3 +1,3 @@
 export interface ITabList{
-    className?: string,
+    isSidebar?: boolean,
 }

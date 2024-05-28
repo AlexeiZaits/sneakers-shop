@@ -1,4 +1,5 @@
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import "./styles.module.scss"
 
 export function LeafletMap(){
     return (

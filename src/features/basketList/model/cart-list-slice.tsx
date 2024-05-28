@@ -10,7 +10,7 @@ export const cartListSlice = createSlice({
     name: "@cartList",
     initialState,
     reducers: {
-        addCart: (state, action) => {
+        addGood: (state, action) => {
             const findGood = state.cartList.find((item) => item.id === action.payload.id)
             if (findGood){
                 findGood.amount = findGood.amount + action.payload.amount
@@ -20,7 +20,6 @@ export const cartListSlice = createSlice({
             }
         },
         removeCart: (state, action)=> {
-            console.log(action.payload)
             state.cartList = state.cartList.filter((item) => item.id !== action.payload)
         },
         calcAmountGoods: (state, _) => {
@@ -31,5 +30,5 @@ export const cartListSlice = createSlice({
     }
 })
 
-export const {addCart, removeCart, calcAmountGoods, checkoutCart} = cartListSlice.actions;
+export const {addGood, removeCart, calcAmountGoods, checkoutCart} = cartListSlice.actions;
 

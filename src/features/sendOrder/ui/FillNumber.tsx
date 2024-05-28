@@ -1,6 +1,7 @@
 import { ChangeEvent } from "react"
 import { checkRussianNumber } from "../lib/checkRussianNumber"
 import { ISendOrder } from "../lib/interfaces"
+import styles from "./styles.module.scss";
 
 export function FillNumber({setNumber, check, number}:Omit<ISendOrder,  "setCheck">){
     
@@ -9,10 +10,10 @@ export function FillNumber({setNumber, check, number}:Omit<ISendOrder,  "setChec
             setNumber(event.currentTarget.value)
         }
     }
-
-    return <div className="send-container">
-    <span className="send-text">Fill in your phone number:</span>
-    <input className="send-input" onChange={handleChange} type="tel" name=""  value={number}/>
-    {check? null: <span className="send-check">Check your number!</span>}
+    
+    return <div className={styles.container}>
+    <span className={styles.text}>Fill in your phone number:</span>
+    <input className={styles.input} onChange={handleChange} type="tel" name=""  value={number}/>
+    {check? null: <span className={styles.check}>Check your number!</span>}
 </div>
 }

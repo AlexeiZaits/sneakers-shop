@@ -1,0 +1,76 @@
+@mixin t-main(){
+    color: $mainColor;
+    font-family: "regKumb";
+    font-size: 0.8rem;
+    @media (min-width: $tablet) {
+        font-size: 1rem;
+    }
+}
+
+@mixin t-bold(){
+    color: $blackText;
+    font-family: "boldKumb";
+    font-size: 1.5rem;
+    @media (min-width: $tablet) {
+        font-size: 2rem;
+    }
+    
+}
+
+@mixin flex(){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin icon-next(){
+    @include t-bold();
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s;
+    cursor: pointer;
+    z-index: 4;
+    path {
+        stroke: black;
+        transition: all 0.5s;
+    }
+    &:hover path{
+        stroke: $textActive;
+    }
+}
+
+@mixin next-mobile-slider(){
+    background-color: $primaryBack;
+    width: 2rem;
+    height: 2.2rem;
+    border-radius: $mainRadius;
+    padding-top: -1rem;
+    padding-left: 0.5rem;
+    align-items: center;
+    position: absolute;
+    border: 3px solid $mainBorder;
+    right: -0.8rem;
+    top: 45%;
+    z-index: 5;
+}
+
+@mixin position-centre(){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin imgView(){
+    @keyframes imgView {
+        from {
+            opacity: 0.3;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+@import "../../../shared/utils/index.scss";
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 32rem;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    
+    @media (min-width: 540px) {
+        width: 30rem;
+    }
+
+    @media (min-width: $tablet) {
+        width: 100%;
+        margin-left: 5rem;
+    }
+    
+}
+
+.company{
+    color: $orangeText;
+    font-size: 1rem;
+}
+
+.price{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 12rem;
+}
+
+.descp{
+    @include t-main();
+}
+
+.discount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $paleBack;
+    width: 3.5rem;
+    height: 1.8rem;
+    border-radius: $mainRadius;
+    text-align: center;
+    color: $textActive;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    @media (min-width: $tablet) {
+        margin-top: 0.4rem;
+    }
+}
+
+.trough{
+    @include t-main();
+    position: absolute;
+    bottom: -2rem;
+    text-decoration: line-through;
+}

@@ -14,8 +14,8 @@ export const Button = ({ imgSrc, children, ...restProps }: IButton) => {
     
     return (
         <button className={styles.button} {...restProps}>
-            {imgSrc && <img className={styles.button+"-img"} src={imgSrc} alt="img" />}
-            {children && <span className={styles.button+"-text"}>{children}</span>}
+            {imgSrc && <img className={styles.img} src={imgSrc} alt="img" />}
+            {children && <span className={styles.text}>{children}</span>}
         </button>
     );
 }

@@ -1,0 +1,87 @@
+@import "../../../shared/utils/index.scss";
+
+.box{
+    @include flex();
+    justify-content: space-around;
+    width: 8rem;
+    margin-top: 1rem;
+
+    @media (min-width:$tablet) {
+        justify-content: space-between;
+    }
+}
+
+.menu {
+    margin-top: 0.3rem;
+    
+    @media (min-width: $tablet) {
+        display: none;
+    }
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.tabList{
+    margin-top: 2rem;
+    width: 11rem;
+    @media (min-width:$tablet) {
+        width: 43rem;
+    }
+    
+}
+.avatar{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 0.5rem;
+    @media (min-width: $tablet) {
+        margin-top: 0;
+        width: 52px;
+        height: 52px;
+    }
+    
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    transition: all 0.5s;
+
+}
+.avatar:hover{
+    border-color: $mainBorder;
+    cursor: pointer;
+}
+.cart{
+    position: relative;
+    margin-top: 1rem;
+}
+@media (min-width: $tablet) {
+    .cart:hover{
+        fill: black;
+    }
+}
+.cart{
+    cursor: pointer;
+}
+
+.amount{
+    @include t-main();
+    color: white;
+    background-color: $buttonBack;
+    top: -0.4rem;
+    left: 40%;
+    border-radius: $mainRadius;
+
+    position: absolute;
+    font-size: 0.7rem !important;
+    width: 1.2rem;
+    height: 0.85rem;
+}
+
+.cart{
+.img path{
+    transition: all 0.5s;
+}
+.img:hover path{
+    fill: $blackText;
+}
+}

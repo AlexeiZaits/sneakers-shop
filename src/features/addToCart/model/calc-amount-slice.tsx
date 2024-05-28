@@ -15,9 +15,7 @@ export const calcAmountSlice = createSlice({
         setAmount: (state, action) => {
             state.amount  = state.amount + action.payload
         },
-        resetAmount: (state, _) => {
-            state.amount = 0;
-        }
+        resetAmount: () => initialState
     }
 })
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiKey = process.env.SNEAKERS_APP_API_KEY;
-
+// TODO: middleware 
 export async function apiGetCard(id:string | number):Promise<any>{
     try {
         const responseCard = await axios.get('https://api.github.com/repos/AlexeiZaits/api/contents/cards/%D1%81ards.json', {
